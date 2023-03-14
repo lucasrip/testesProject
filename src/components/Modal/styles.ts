@@ -31,9 +31,8 @@ export const ModalBox = styled.div`
  position: relative;
  flex-direction: column;
  width: 60%;
- max-width: 30%;
  height: auto;
- padding: 1.5rem;
+ padding: 1rem;
  background-color: ${colors.purple.light};
  border-radius: 5px;
 
@@ -100,14 +99,14 @@ export const ModalBox = styled.div`
     {
       width: 100%;
       height: auto;
-      padding: 0.8rem;
+      padding: 0.5rem;
     }
     .boxCloseModal
     {
       button
       {
-        top: -0.5rem;
-        right:-0.5rem;
+        top: 0.3rem;
+        right:0.3rem;
       }
     }
 
