@@ -12,12 +12,18 @@ export const Container = styled.div`
  justify-content: center;
  align-items: center;
  width: 100%;
- height: auto;
- /* min-height: 100%; */
+ height: 100%;
+
  background-color: ${colors.opacity.purple};
  backdrop-filter: blur(10px);
  color:${colors.black.regular};
  overflow-y: auto;
+
+ @media (max-width:450px) 
+ {
+   justify-content: flex-start;
+   align-items: flex-start;
+ }
 `;
 
 export const ModalBox = styled.div`
@@ -25,6 +31,7 @@ export const ModalBox = styled.div`
  position: relative;
  flex-direction: column;
  width: 60%;
+ max-width: 30%;
  height: auto;
  padding: 1.5rem;
  background-color: ${colors.purple.light};
@@ -92,7 +99,7 @@ export const ModalBox = styled.div`
     &
     {
       width: 100%;
-      height: 100%;
+      height: auto;
       padding: 0.8rem;
     }
     .boxCloseModal
@@ -129,6 +136,7 @@ export const Body = styled.div`
  display: flex;
  flex-wrap: wrap;
  width: 100%;
+
  height: auto;
  margin-top: 1rem;
  margin-bottom: 1rem;
@@ -279,6 +287,7 @@ export const ProjectDetails = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: auto;
   flex: 1;
   text-align: center;
  }
