@@ -10,9 +10,11 @@ width: 31.25rem;
 max-width: 100%;
 height: auto;
 margin-top: 3rem;
+padding: 1rem;
 
  span 
 {
+  padding: 0.5rem;
   font-size: 1.3rem;
   line-height: 1.4rem;
   text-align: left;

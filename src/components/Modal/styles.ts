@@ -12,7 +12,8 @@ export const Container = styled.div`
  justify-content: center;
  align-items: center;
  width: 100%;
- height: 100%;
+ height: auto;
+ min-height: 100%;
  background-color: ${colors.opacity.purple};
  backdrop-filter: blur(10px);
  color:${colors.black.regular};
