@@ -13,7 +13,7 @@ export const Container = styled.div`
  align-items: center;
  width: 100%;
  height: auto;
- min-height: 100%;
+ /* min-height: 100%; */
  background-color: ${colors.opacity.purple};
  backdrop-filter: blur(10px);
  color:${colors.black.regular};
