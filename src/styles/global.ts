@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import colors from './colors';
 
 export default createGlobalStyle`
     html
@@ -13,9 +14,10 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+  a,
   a:visited 
   {
-    color: #000;
+    color: ${colors.black.regular};
   }
 
   body, input, button {

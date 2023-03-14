@@ -18,74 +18,81 @@ export const Container = styled.section`
  {
   margin-top: 3rem;
   width: 80%;
-  height: auto;  
+  height: auto;   
   
- }
+  }
 
  .slick-arrow::before
  {
    color: ${colors.purple.bold};
  }
 
- .slick-dots li ::before
+  .slick-dots li ::before
  {
   color: ${colors.purple.light};
-}
+ } 
 
-.slick-active
-{
+ .slick-active
+ {
   
   color: ${colors.purple.bold};
-}
-.slick-track
-{
-  display: flex;
-}
+ } 
 
-.slick-slide
-{
-  width: auto !important;
-}
-
-.slick-prev:before, .slick-next:before
-{
-  font-size: 2.5rem;
-}
-
-.slick-prev
-{
-  left: -3.75rem;
-}
-
-.slick-next 
-{
-    right: -2.5rem;
-}
-
-@media (max-width:600px)
-{
-
- .slick-slider
+ .slick-slide 
  {
-  width: 70%;
+  width: auto;
+  display: flex;
+  justify-content: center;
  }
-
+ 
  .slick-prev:before, .slick-next:before
  {
-  font-size: 2rem;
- }
+  font-size: 2.5rem;
+ } 
 
  .slick-prev
  {
-  left: -3rem;
+  left: -3.75rem;
  }
 
-.slick-next 
-{
-    right: -2rem;
-}
+ .slick-next 
+ {
+    right: -2.5rem;
+ } 
 
-}
+ @media (max-width:600px)
+ {
+
+  .slick-prev:before, .slick-next:before
+  {
+   font-size: 2rem;
+  }  
+
+  .slick-prev
+  {
+   left: -3rem;
+  } 
+
+  .slick-next  
+  {
+    right: -2rem;
+  }
+
+ }
+
+
+ @media (max-width:470px)
+ {
+
+  .slick-prev:before, 
+  .slick-next:before,
+  .slick-prev,
+  .slick-next 
+  {
+    display: none;
+  }
+
+ }
 
 `;
 
@@ -149,8 +156,9 @@ span::before , span::after
 
 img
 {
-  width:${({imgConfig}) => imgConfig?.width || 'auto' } !important;
-  height:${({imgConfig}) => imgConfig?.height || '17rem' };
+  width:${({imgConfig}) => imgConfig?.width || '100%' } !important; 
+  height:${({imgConfig}) => imgConfig?.height || '17rem' }; 
+  
 }
 
 
@@ -159,7 +167,10 @@ img
 @media (max-width:950px)
 {
 
- width: 15rem !important;
+ width: 100% !important;
+ display: flex;
+ justify-content: center;
+ align-items: center;
 
  strong
  {
@@ -168,7 +179,7 @@ img
 
  img
  {
-  width:100%;
+  width:auto;
   height:9rem;
   height:${({imgConfig}) => {
     if(imgConfig?.width )
@@ -182,5 +193,27 @@ img
 
   
  }
+
+ span
+ {
+  strong
+  {
+    font-size: 1rem;
+  }
+ }
+
 }
+
+@media (max-width:450px)
+{
+  span
+  {
+  strong
+  {
+    font-size: 0.8rem;
+  }
+  
+  }
+}
+
 `;

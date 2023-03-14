@@ -16,6 +16,7 @@ export const Container = styled.div`
  background-color: ${colors.opacity.purple};
  backdrop-filter: blur(10px);
  color:${colors.black.regular};
+ overflow-y: auto;
 `;
 
 export const ModalBox = styled.div`
@@ -46,7 +47,7 @@ export const ModalBox = styled.div`
    
    img
    {
-    width: 2.rem;
+    width: 2rem;
     height: 2rem;
    }
   }
@@ -91,7 +92,15 @@ export const ModalBox = styled.div`
     {
       width: 100%;
       height: 100%;
-      padding: 1rem;
+      padding: 0.8rem;
+    }
+    .boxCloseModal
+    {
+      button
+      {
+        top: -0.5rem;
+        right:-0.5rem;
+      }
     }
 
     .headerProject
@@ -128,7 +137,7 @@ export const Body = styled.div`
  & > p
  {
   width: 100%;
-  min-width: 15rem;
+  min-width: 16rem;
   padding-top: 1rem;
   flex: 1;
   text-align: left;
@@ -236,6 +245,18 @@ export const Body = styled.div`
 
   }
 
+ @media (max-width:450px) 
+{
+  &
+  {
+    flex-direction: column;
+  }
+  .slick-slider
+  {
+    width: 100%;
+  }
+}
+
 `;
 
 export const ProjectDetails = styled.div`
@@ -249,6 +270,7 @@ export const ProjectDetails = styled.div`
  gap: 1rem;
  flex: 1;
 
+ 
 
  & .details
  {
@@ -276,7 +298,9 @@ export const ProjectDetails = styled.div`
   display: flex;
   justify-content: center;
   gap: 1rem;
-  width: 20rem;
+  /* width: 20rem; */
+  width: 100%;
+
   height: auto;
 
   a

@@ -70,4 +70,30 @@ export const Container = styled.div`
 }
 
 
+@media (max-width:300px)
+ {
+ 
+  span
+  {
+    padding-left: 0.2rem;
+  
+   margin-left: 0.2rem;
+
+   strong
+   {
+    font-size: 1rem;
+    margin-left: 0.25rem;
+   }
+  }
+  h2
+  {
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    width: 80%;
+  }
+  
+ }
+
+
 `;

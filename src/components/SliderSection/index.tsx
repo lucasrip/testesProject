@@ -28,15 +28,17 @@ export default function SliderSection({titleObj,data, description, imgConfig}:Pr
   const [ isOpen , setIsOpen ] = useState(false);
   const [ project , setProject ] = useState<Project >({} as Project);
 
-  const slidesToShow = window.innerWidth <= 950 && data.length <= 5 ? 2 : 3;
-  const  slidesToScroll = window.innerWidth <= 770 ? 1 : 1;
+  let slidesToShow = window.innerWidth <= 800? 2 : 3;
+  slidesToShow = window.innerWidth <= 620? 1 : slidesToShow;
+  
+  // const  slidesToScroll = window.innerWidth <= 770 ? 1 : 1;
 
   const settings = {
     dots: false,
     infinite: true,
     speed: 200,
     slidesToShow,
-    slidesToScroll,
+    slidesToScroll: 1,
   };
 
   function handleOpenModal(project:Project)
