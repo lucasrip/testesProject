@@ -9,11 +9,12 @@ gap: 1rem;
 width: 31.25rem;
 max-width: 100%;
 height: auto;
-margin-top: 3rem;
-padding: 1rem;
+margin-top: 1rem;
 
  span 
 {
+  margin-left:0.5rem ;
+  width: auto;
   padding: 0.5rem;
   font-size: 1.3rem;
   line-height: 1.4rem;

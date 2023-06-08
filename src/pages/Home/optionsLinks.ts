@@ -3,21 +3,21 @@ import curriculunm from '../../assets/curriculunm/curriculunm.pdf';
 
 export const optionsLinks = [
   {
-    name: 'Livros lidos tecnologia',
+    name: 'Technology books',
     icon: assets.book,
     link: 'https://www.amazon.com.br/hz/wishlist/ls/U467JNW1WMUC?ref_=wl_share',
     description: 'botão para acessar a minha estantede de livros na amazon',
     target:'blank'
   },
   {
-    name: 'Livros lidos outros',
+    name: 'Other books',
     icon: assets.book,
-    link: 'https://www.amazon.com.br/hz/wishlist/ls/U467JNW1WMUC?ref_=wl_share',
+    link: 'https://www.amazon.com.br/hz/wishlist/ls/34LPCG4OGQWNB?ref_=wl_share',
     description: 'botão para acessar a minha estantede de livros na amazon',
     target:'blank'
   },
   {
-    name: 'Livros interesse',
+    name: 'Interesting books',
     icon: assets.book,
     link: 'https://www.amazon.com.br/hz/wishlist/ls/3DZ4SKUXSDQD2?ref_=wl_share',
     description: 'botão para acessar a minha estantede de livros na amazon',
@@ -30,7 +30,7 @@ export const optionsLinks = [
     description: 'botão para ir para a pagina de projetos'
   },
   {
-    name: 'Curriculunm',
+    name: 'Dowload CV',
     icon: assets.curriculumn,
     link: curriculunm,
     description: 'botão para ver o meu curriculunm',

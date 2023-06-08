@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import colors from '../../styles/colors';
 
 export const Container = styled.main`
+
 position: relative;
 margin-top: 5rem;
 padding-bottom: 1rem;
@@ -15,6 +16,7 @@ background: ${colors.opacity.purple};
 `;
 
 export const NavBar = styled.nav`
+
 position: relative;
 margin-top: 7rem;
 padding-bottom: 0.5rem;
@@ -29,6 +31,7 @@ justify-content: center;
 align-items: center;
 font-family: 'Oswald', sans-serif;
 font-weight: 400;
+
 > div
 {
   position: relative;
@@ -80,7 +83,6 @@ font-weight: 400;
 > div a:hover::after 
 {
  width: calc(100% + 1.5rem);
-
 }
 
 `;

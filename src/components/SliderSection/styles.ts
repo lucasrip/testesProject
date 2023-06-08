@@ -1,6 +1,24 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import colors from '../../styles/colors';
 
+const loading = keyframes`
+  0%
+  {
+    background-position: 0%;
+  }
+
+  50%
+  {
+    background-position: 100%;
+  }
+
+  100%
+  {
+    background-position: 0%;
+
+  }
+  
+`;
 
 export const Container = styled.section`
  position: relative;
@@ -13,6 +31,7 @@ export const Container = styled.section`
  justify-content: center;
  align-items: center;
  margin-top: 4rem;
+
 
  .slick-slider
  {
@@ -94,6 +113,12 @@ export const Container = styled.section`
 
  }
 
+ .skeleton
+ {
+  background: linear-gradient(-45deg, ${colors.purple.bold}, black,${colors.purple.bold});
+  animation: ${loading} 1s linear infinite;
+  background-size:400%;
+ }
 `;
 
 interface ProjectContainerProps
@@ -106,7 +131,8 @@ interface ProjectContainerProps
 
 export const ProjectContainer = styled.div<ProjectContainerProps>`
 position: relative;
-width:100% !important;
+width:100% ;
+flex:1;
 position: relative;
 display: flex;
 flex-direction: column;
@@ -114,6 +140,10 @@ height:auto;
 object-fit: contain;
 cursor: pointer;
 color: ${colors.purple.light};
+
+background: linear-gradient(-45deg, ${colors.purple.bold}, black,${colors.purple.bold});
+animation: ${loading} 1s linear infinite;
+background-size:400%;
 
 span
 {
@@ -156,18 +186,15 @@ span::before , span::after
 
 img
 {
-  width:${({imgConfig}) => imgConfig?.width || '100%' } !important; 
+  width:${({imgConfig}) => imgConfig?.width || '100%' }; 
   height:${({imgConfig}) => imgConfig?.height || '17rem' }; 
   
 }
 
-
-
-
 @media (max-width:950px)
 {
 
- width: 100% !important;
+ width: 100%;
  display: flex;
  justify-content: center;
  align-items: center;
@@ -191,7 +218,6 @@ img
     return '9rem';
   } };
 
-  
  }
 
  span
@@ -208,10 +234,10 @@ img
 {
   span
   {
-  strong
-  {
+   strong
+   {
     font-size: 0.8rem;
-  }
+   }
   
   }
 }

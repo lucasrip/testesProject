@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import desktop from '../assets/background/desktop.jpg';
-import mobile from '../assets/background/mobile.jpg';
+import desktop from '../assets/background/desktop.png';
 
 export const Container = styled.div`
 margin: 0 auto;
@@ -12,9 +11,6 @@ height: 100%;
 background: url(${desktop}) no-repeat ;
 background-size: cover;
 
-@media (max-width:800px) {
- background: url(${mobile}) no-repeat ;
-}
 `;
 
 export const Content = styled.div`
@@ -25,6 +21,4 @@ flex-direction: column;
 width: 100%;
 min-height: 100vh;
 height: 100%;
-
-
 `;

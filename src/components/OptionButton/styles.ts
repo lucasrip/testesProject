@@ -16,7 +16,6 @@ export const Container = styled.div`
  }
 `;
 
-
 export const Button = styled(Link)`
  text-decoration: none;
  width: 29.75rem;

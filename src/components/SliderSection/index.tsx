@@ -31,8 +31,6 @@ export default function SliderSection({titleObj,data, description, imgConfig}:Pr
   let slidesToShow = window.innerWidth <= 800? 2 : 3;
   slidesToShow = window.innerWidth <= 620? 1 : slidesToShow;
   
-  // const  slidesToScroll = window.innerWidth <= 770 ? 1 : 1;
-
   const settings = {
     dots: false,
     infinite: true,
@@ -58,17 +56,27 @@ export default function SliderSection({titleObj,data, description, imgConfig}:Pr
         titleObj={titleObj}
         description={description}
       />
+       
 
+      <div className='skeleton'></div>
       <Slider {...settings}>
         {
           data.map( (project,index) =>
-            <ProjectContainer key={index} imgConfig={imgConfig } onClick={() => handleOpenModal(project) }  >
+            <ProjectContainer 
+              key={index} 
+              imgConfig={imgConfig }
+              onClick={() => handleOpenModal(project) }  
+            >
               <span>
                 <strong>
                   { project.name}
                 </strong>
               </span>
-              <img src={project.imgs[0].link} alt={project.imgs[0].description} title={project.imgs[0].description} />
+              <img 
+                src={project.imgs[0].link} 
+                alt={project.imgs[0].description} 
+                title={project.imgs[0].description} 
+              />
             </ProjectContainer>  
           )
         }

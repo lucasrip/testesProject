@@ -1,8 +1,27 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import colors from '../../styles/colors';
 
 import 'slick-carousel/slick/slick.css'; 
 import 'slick-carousel/slick/slick-theme.css';
+
+const loading = keyframes`
+  0%
+  {
+    background-position: 0%;
+  }
+
+  50%
+  {
+    background-position: 100%;
+  }
+
+  100%
+  {
+    background-position: 0%;
+
+  }
+  
+`;
 
 export const Container = styled.div`
  position: fixed;
@@ -45,8 +64,8 @@ export const ModalBox = styled.div`
   button
   {
    position: relative;
-   top: -1rem;
-   right:-1rem;
+   top: -1.5rem;
+   right:-1.5rem;
    border: 0px;
    width: 2rem;
    height: 2rem;
@@ -98,6 +117,7 @@ export const ModalBox = styled.div`
     &
     {
       width: 100%;
+      min-height: 100%;
       height: auto;
       padding: 0.5rem;
     }
@@ -122,10 +142,13 @@ export const ModalBox = styled.div`
 
       strong
       {
-        font-size: 1.5rem;
+        font-size: 1rem;
       }
     }
-
+    .details > div
+    {
+      margin-bottom:0;
+    }
   }
 
 `;
@@ -146,12 +169,12 @@ export const Body = styled.div`
  {
   width: 100%;
   min-width: 16rem;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
   flex: 1;
   text-align: left;
   text-justify: left;
   line-height: 1.5rem;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
  }
  
  .slick-slider
@@ -175,6 +198,10 @@ export const Body = styled.div`
  {
   width: 28rem;
   height: 20rem;
+
+  background: linear-gradient(-45deg, ${colors.purple.bold}, black,${colors.purple.bold});
+  animation: ${loading} 1s linear infinite;
+  background-size:400%;
  }
 
  
@@ -213,29 +240,18 @@ export const Body = styled.div`
  .web > .slick-arrow,
  .slick-arrow
  {
-  display: none !important;
+  display: none ;
  }
 
 
  .slick-dots
  {
-  position: relative !important;
-  display: flex !important;
+  position: relative;
+  display: flex;
   justify-content: center;
   top: 1rem;
   height: auto;
  }
-  
-  @media (max-width:1250px) 
-  {
-    & > p
-   {
-    padding: 1rem;
-    margin-top: 1rem;
-    min-height: 5rem;
-   }
-
-  }
 
   @media (max-width:550px) 
   {
@@ -307,7 +323,6 @@ export const ProjectDetails = styled.div`
   display: flex;
   justify-content: center;
   gap: 1rem;
-  /* width: 20rem; */
   width: 100%;
 
   height: auto;
@@ -335,6 +350,14 @@ export const ProjectDetails = styled.div`
    height: 3rem;
   }
  }
+
+ @media (max-width:450px) 
+{
+  &
+  {
+    margin-top:1rem;
+  }
+}
 
 `;
 
