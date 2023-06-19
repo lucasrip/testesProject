@@ -136,14 +136,14 @@ flex:1;
 position: relative;
 display: flex;
 flex-direction: column;
-height:auto;
+/* height:20rem; */
 object-fit: contain;
 cursor: pointer;
 color: ${colors.purple.light};
 
-background: linear-gradient(-45deg, ${colors.purple.bold}, black,${colors.purple.bold});
+/* background: linear-gradient(-45deg, ${colors.purple.bold}, black,${colors.purple.bold});
 animation: ${loading} 1s linear infinite;
-background-size:400%;
+background-size:400%; */
 
 span
 {
@@ -186,9 +186,12 @@ span::before , span::after
 
 img
 {
-  width:${({imgConfig}) => imgConfig?.width || '100%' }; 
-  height:${({imgConfig}) => imgConfig?.height || '17rem' }; 
-  
+ width: 100%;
+ height: 20rem;
+
+
+ /* width:${({imgConfig}) => imgConfig?.width || '100%' }; 
+  height:${({imgConfig}) => imgConfig?.height || '17rem' };  */
 }
 
 @media (max-width:950px)
