@@ -141,9 +141,9 @@ object-fit: contain;
 cursor: pointer;
 color: ${colors.purple.light};
 
-/* background: linear-gradient(-45deg, ${colors.purple.bold}, black,${colors.purple.bold});
+background: linear-gradient(-45deg, ${colors.purple.bold}, black,${colors.purple.bold});
 animation: ${loading} 1s linear infinite;
-background-size:400%; */
+background-size:400%;
 
 span
 {

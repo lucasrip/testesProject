@@ -58,7 +58,7 @@ export default function SliderSection({titleObj,data, description, imgConfig}:Pr
       />
        
 
-      <div className='skeleton'></div>
+      {/* <div className='skeleton'></div> */}
       <Slider {...settings}>
         {
           data.map( (project,index) =>
