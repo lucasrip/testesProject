@@ -12,7 +12,8 @@ export default function Projects()
       <ControllBack label={'Projects'} />
 
       <NavBar>
-        <div>
+
+        <div title="lista de links para a navegação entre as seções de projetos que tem no momento no portefolio">
           {
             sections.map( (section, index) => (
             

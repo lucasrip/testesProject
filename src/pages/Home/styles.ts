@@ -1,27 +1,12 @@
 import styled from 'styled-components';
-import colors from '../../styles/colors';
-
 
 export const Container = styled.main`
+position:relative;
 display: flex;
 flex-direction: column;
 gap: 1rem;
+padding: 0.5rem;
 width: 31.25rem;
 max-width: 100%;
-height: auto;
 margin-top: 1rem;
-
- span 
-{
-  margin-left:0.5rem ;
-  width: auto;
-  padding: 0.5rem;
-  font-size: 1.3rem;
-  line-height: 1.4rem;
-  text-align: left;
-  margin-bottom: 1rem;
-  font-weight: bold;
-  color: ${colors.black.regular};
-  font-family: 'Oswald', sans-serif;
-}
 `;

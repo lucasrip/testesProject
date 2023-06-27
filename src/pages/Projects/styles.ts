@@ -18,7 +18,7 @@ background: ${colors.opacity.purple};
 export const NavBar = styled.nav`
 
 position: relative;
-margin-top: 7rem;
+margin-top: 1rem;
 padding-bottom: 0.5rem;
 padding-left: 2rem;
 padding-right: 2rem;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import colors from '../../styles/colors';
 
 export const Container = styled.div`
- position: absolute;
+ position: relative;
  top: -2rem;
  width:100%;
  height: 5rem;
