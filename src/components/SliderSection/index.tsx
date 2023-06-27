@@ -17,19 +17,15 @@ interface Props
   };
   description: string;
   data: Project[];
-  imgConfig?:{
-    width: string;
-    height: string;
-  };
 }
 
-export default function SliderSection({titleObj,data, description, imgConfig}:Props)
+export default function SliderSection({titleObj,data, description}:Props)
 {
   const [ isOpen , setIsOpen ] = useState(false);
   const [ project , setProject ] = useState<Project >({} as Project);
 
-  let slidesToShow = window.innerWidth <= 800? 2 : 3;
-  slidesToShow = window.innerWidth <= 620? 1 : slidesToShow;
+  // let slidesToShow = window.innerWidth <= 800? 2 : 3;
+  const slidesToShow = window.innerWidth <= 500? 1 : 3;
   
   const settings = {
     dots: false,
@@ -57,14 +53,11 @@ export default function SliderSection({titleObj,data, description, imgConfig}:Pr
         description={description}
       />
        
-
-      {/* <div className='skeleton'></div> */}
       <Slider {...settings}>
         {
           data.map( (project,index) =>
             <ProjectContainer 
               key={index} 
-              imgConfig={imgConfig }
               onClick={() => handleOpenModal(project) }  
             >
               <span>

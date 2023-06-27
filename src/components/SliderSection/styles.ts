@@ -24,7 +24,6 @@ export const Container = styled.section`
  position: relative;
  width:100%;
  flex: 1;
- padding-top: 1rem;
  color: ${colors.purple.light};
  display: flex;
  flex-direction: column;
@@ -35,7 +34,7 @@ export const Container = styled.section`
 
  .slick-slider
  {
-  margin-top: 3rem;
+  margin-top: 2rem;
   width: 80%;
   height: auto;   
   
@@ -43,35 +42,23 @@ export const Container = styled.section`
 
  .slick-arrow::before
  {
-   color: ${colors.purple.bold};
+   color: #ffff;
  }
-
-  .slick-dots li ::before
- {
-  color: ${colors.purple.light};
- } 
-
- .slick-active
- {
-  
-  color: ${colors.purple.bold};
- } 
 
  .slick-slide 
  {
-  width: auto;
   display: flex;
   justify-content: center;
  }
  
  .slick-prev:before, .slick-next:before
  {
-  font-size: 2.5rem;
+  font-size: 2rem;
  } 
 
  .slick-prev
  {
-  left: -3.75rem;
+  left: -2.75rem;
  }
 
  .slick-next 
@@ -82,9 +69,9 @@ export const Container = styled.section`
  @media (max-width:600px)
  {
 
-  .slick-prev:before, .slick-next:before
+  & > .slick-prev:before, .slick-next:before
   {
-   font-size: 2rem;
+   font-size: 1rem;
   }  
 
   .slick-prev
@@ -99,7 +86,6 @@ export const Container = styled.section`
 
  }
 
-
  @media (max-width:470px)
  {
 
@@ -109,41 +95,20 @@ export const Container = styled.section`
   .slick-next 
   {
     display: none;
+    font-size:0px;
   }
+ 
 
  }
 
- .skeleton
- {
-  background: linear-gradient(-45deg, ${colors.purple.bold}, black,${colors.purple.bold});
-  animation: ${loading} 1s linear infinite;
-  background-size:400%;
- }
 `;
 
-interface ProjectContainerProps
-{
-  imgConfig?:{
-    width: string;
-    height: string;
-  };
-}
-
-export const ProjectContainer = styled.div<ProjectContainerProps>`
-position: relative;
-width:100% ;
-flex:1;
+export const ProjectContainer = styled.div`
 position: relative;
 display: flex;
 flex-direction: column;
-/* height:20rem; */
-object-fit: contain;
 cursor: pointer;
 color: ${colors.purple.light};
-
-background: linear-gradient(-45deg, ${colors.purple.bold}, black,${colors.purple.bold});
-animation: ${loading} 1s linear infinite;
-background-size:400%;
 
 span
 {
@@ -162,6 +127,7 @@ span
     width: auto;
     position: relative;
     font-size: 1.5rem;
+    font-weight:bold;
   }
 
   
@@ -172,7 +138,7 @@ span::before , span::after
   content: "";
   position: relative;
   width: 5rem;
-  height: 0.5rem;
+  height: 0.1rem;
   margin: 1rem;
   background-color: ${colors.purple.light};
 }
@@ -186,18 +152,20 @@ span::before , span::after
 
 img
 {
- width: 100%;
- height: 20rem;
+ width:100%;
+ max-width:340rem;
+ height:18rem;
+ max-height: 20rem;
+ object-fit: fill;
 
+ background: linear-gradient(-45deg, ${colors.purple.bold}, black,${colors.purple.bold});
+ animation: ${loading} linear infinite;
+ background-size:400%;
 
- /* width:${({imgConfig}) => imgConfig?.width || '100%' }; 
-  height:${({imgConfig}) => imgConfig?.height || '17rem' };  */
 }
 
 @media (max-width:950px)
 {
-
- width: 100%;
  display: flex;
  justify-content: center;
  align-items: center;
@@ -209,17 +177,9 @@ img
 
  img
  {
-  width:auto;
-  height:9rem;
-  height:${({imgConfig}) => {
-    if(imgConfig?.width )
-    {
-      const searchHeight = imgConfig?.height.split(/\D/)[0];
-      const newHeight = parseFloat(searchHeight) /2;
-      return newHeight + 'rem';
-    }
-    return '9rem';
-  } };
+
+  min-height:9rem;
+  height: 10rem;
 
  }
 

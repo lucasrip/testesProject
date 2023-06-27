@@ -209,6 +209,7 @@ export const Body = styled.div`
  {
   width: 7.5rem ;
   height: 25rem  ;
+  
  }
 
  .web,
@@ -236,9 +237,8 @@ export const Body = styled.div`
   height: auto;
  } 
 
- .mobile > .slick-arrow,
- .web > .slick-arrow,
- .slick-arrow
+
+ & > .slick-arrow
  {
   display: none ;
  }

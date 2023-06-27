@@ -34,7 +34,6 @@ export default function Projects()
             titleObj={section.titleObj}
             data={section.data}
             description={section.description}
-            imgConfig={section.imgConfig}
           />
         ))
       }

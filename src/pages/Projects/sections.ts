@@ -18,9 +18,5 @@ export const sections = [
     },
     data: mobile,
     description: 'seção para os projetos Front end Mobile',
-    imgConfig:{
-      width:'13rem',
-      height:'25rem',
-    },
   },
 ];
