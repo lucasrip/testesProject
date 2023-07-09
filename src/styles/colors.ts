@@ -1,4 +1,7 @@
 export default {
+  white:{
+    regular:'#ffff',
+  },
   purple :{
     light: '#F4EEF5',
     regular:'#581569' ,

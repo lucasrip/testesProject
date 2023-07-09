@@ -1,27 +1,8 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import colors from '../../styles/colors';
 
 import 'slick-carousel/slick/slick.css'; 
 import 'slick-carousel/slick/slick-theme.css';
-
-const loading = keyframes`
-  0%
-  {
-    background-position: 0%;
-  }
-
-  50%
-  {
-    background-position: 100%;
-  }
-
-  100%
-  {
-    background-position: 0%;
-
-  }
-  
-`;
 
 export const Container = styled.div`
  position: fixed;
@@ -47,13 +28,14 @@ export const Container = styled.div`
 
 export const ModalBox = styled.div`
  display: flex;
- position: relative;
+ position: fixed;
  flex-direction: column;
- width: 60%;
+ width: 70%;
  height: auto;
- padding: 1rem;
+ padding:2rem;
  background-color: ${colors.purple.light};
  border-radius: 5px;
+ gap:1.5rem;
 
  .boxCloseModal
  {
@@ -64,8 +46,6 @@ export const ModalBox = styled.div`
   button
   {
    position: relative;
-   top: -1.5rem;
-   right:-1.5rem;
    border: 0px;
    width: 2rem;
    height: 2rem;
@@ -95,23 +75,24 @@ export const ModalBox = styled.div`
       
       filter: invert(96%) sepia(36%) saturate(225%) hue-rotate(200deg) brightness(98%) contrast(97%);
     }
-    strong
+    h1
     {
       font-family: 'Oswald', sans-serif;
       font-size: 2rem;
       font-weight: bold;
       margin-left: 1rem;
+      text-transform: capitalize;
     }
  }
 
  @media (max-width:850px)
  {
   &{
-    width: 90% ;
+    width: 80% ;
   }
  }
 
- @media (max-width:450px) 
+ @media (max-width:600px) 
   {
    
     &
@@ -142,7 +123,7 @@ export const ModalBox = styled.div`
 
       strong
       {
-        font-size: 1rem;
+        font-size: 1.5rem;
       }
     }
     .details > div
@@ -156,130 +137,126 @@ export const ModalBox = styled.div`
 export const Body = styled.div`
  position: relative;
  display: flex;
- flex-wrap: wrap;
  width: 100%;
-
+ gap:1rem;
+ flex-wrap:wrap;
  height: auto;
- margin-top: 1rem;
- margin-bottom: 1rem;
- gap: 1rem;
  font-family: 'Raleway', sans-serif;
 
  & > p
  {
-  width: 100%;
-  min-width: 16rem;
   padding-top: 0.5rem;
   flex: 1;
+  min-width:15rem;
+  min-height:5rem;
   text-align: left;
   text-justify: left;
   line-height: 1.5rem;
   font-size: 1.4rem;
+  word-break:break-word;
  }
  
+ & > div
+ {
+   position:relative;
+   display:flex;
+   justify-content:center;
+   flex:1;
+ }
  .slick-slider
  {
-   flex: 1;
-   width: 100%;
-   justify-content: center;
-   height: 20rem;
-   align-items: center;
- }
-
- .slick-slider div
- {
-   display: flex;
+  width: 25rem;
+   position:relative;
    height: auto;
-   justify-content: center;
-   align-items: center;
  }
- 
- .web , .web  img
+
+ .slick-slider div 
  {
-  width: 28rem;
-  height: 20rem;
-
-  /* background: linear-gradient(-45deg, ${colors.purple.bold}, black,${colors.purple.bold});
-  animation: ${loading} 1s linear infinite;
-  background-size:400%; */
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: auto;
  }
 
- 
-.mobile,.mobile  img 
+ .web  img
+ {
+  width: 20rem;
+  height: 15rem;
+  object-fit:fill;
+ }
+
+ .mobile  img 
  {
   width: 7.5rem ;
-  height: 25rem  ;
-  
+  height: 15rem  ;
+  object-fit:fill;
  }
-
- .web,
- .mobile
- {
-  height: auto;
-  min-width: auto;
-
- }
- 
 
  .slick-dots.slick-thumb > li > a > img , .slick-dots.slick-thumb > li,
  .web .slick-dots.slick-thumb > li > a > img , .slick-dots.slick-thumb > li
  {
   width: 5rem;
-  min-width: auto;
   height:auto;
  }
 
- .mobile .slick-dots.slick-thumb > li > a > img , .slick-dots.slick-thumb > li
+.slick-dots.slick-thumb
  {
-  width: 4rem;
-  min-width: auto;
-
-  height: auto;
+   position:relative;
+   display:flex;
+   width: 100%;
+   height: auto;
  } 
 
-
- & > .slick-arrow
+ .slick-prev:before, .slick-next:before
  {
-  display: none ;
+  font-size: 1.5rem;
+  color:${colors.purple.bold};
+ } 
+
+ .slick-prev
+ {
+  left: -2rem;
  }
 
-
- .slick-dots
+ .slick-next 
  {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  top: 1rem;
-  height: auto;
- }
+    right: -2rem;
+ } 
 
-  @media (max-width:550px) 
+  @media (max-width:600px) 
   {
 
     .slick-slider
     {
-     width: 80% ;
+     width: 20rem ;
     }
 
+    &
     .slick-dots.slick-thumb > li > a > img , .slick-dots.slick-thumb > li img,
     .slick-dots.slick-thumb > li > a > img , .slick-dots.slick-thumb > li
     {
       width: auto;
     }
 
-  }
-
- @media (max-width:450px) 
-{
-  &
+    &
   {
     flex-direction: column;
   }
-  .slick-slider
+  & > p
   {
+    margin-top:2.5rem;
     width: 100%;
   }
-}
+
+  .slick-prev ,
+  .slick-next ,
+  .slick-prev:before, 
+  .slick-next:before
+  {
+   display:none;
+  }
+
+  }
 
 `;
 
@@ -290,11 +267,8 @@ export const ProjectDetails = styled.div`
  position: relative;
  width: 100%;
  height: auto;
- margin-top: 2rem;
  gap: 1rem;
  flex: 1;
-
- 
 
  & .details
  {
@@ -307,24 +281,22 @@ export const ProjectDetails = styled.div`
   text-align: center;
  }
  
-
-.details > strong
+.details > p
 {
   font-size: 1.5rem;
   font-family: 'Oswald', sans-serif;
   font-weight: bold;
-
+  text-transform: capitalize;
 }
 
 .details > div
  {
   flex: 1;
-  margin-top: 1rem;
   display: flex;
   justify-content: center;
   gap: 1rem;
   width: 100%;
-
+  margin-top:1rem;
   height: auto;
 
   a
@@ -338,10 +310,9 @@ export const ProjectDetails = styled.div`
     
     p
     {
-     margin-top: 0.3125rem;
      font-size: 1.3rem;
      font-family: 'Raleway', sans-serif;
-
+     text-transform: capitalize;
     }
   }
    a img
@@ -355,7 +326,15 @@ export const ProjectDetails = styled.div`
 {
   &
   {
+    justify-content:center;
     margin-top:1rem;
+    gap:5rem;
+    padding: 2rem;
+  }
+  &,.details, .details > div
+  {
+    flex:0;
+    height: 5rem;
   }
 }
 

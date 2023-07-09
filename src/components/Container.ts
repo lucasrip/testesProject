@@ -10,8 +10,8 @@ position: relative;
 width: 100%;
 min-height: 100vh;
 height: 100%;
-background: url(${desktop}) no-repeat ;
-background-size: cover;
+background: url(${desktop}) repeat ;
+background-size: 100%;
 
 `;
 

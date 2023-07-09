@@ -1,13 +1,12 @@
 import ControllBack from '../../components/ControllBack';
 import SliderSection from '../../components/SliderSection';
 import { sections } from './sections';
-import { Container, NavBar } from './styles';
+import { Container, NavBar, SectionsContainer } from './styles';
 
 export default function Projects()
 {
 
   return (
-    
     <Container>
       <ControllBack label={'Projects'} />
 
@@ -27,16 +26,19 @@ export default function Projects()
         </div>
       </NavBar>
 
-      {
-        sections.map((section , index) => (
-          <SliderSection
-            key={index}
-            titleObj={section.titleObj}
-            data={section.data}
-            description={section.description}
-          />
-        ))
-      }
+      <SectionsContainer>
+        {
+          sections.map((section , index) => (
+            <SliderSection
+              key={index}
+              titleObj={section.titleObj}
+              data={section.data}
+              description={section.description}
+              typeFormat={section.typeFormat}
+            />
+          ))
+        }
+      </SectionsContainer>
        
 
       

@@ -1,7 +1,5 @@
 import { Container } from './styles';
-
-
-interface Props
+interface ISectionHeader
 {
   titleObj: {
     title:string;
@@ -10,7 +8,7 @@ interface Props
   description: string;
 }
 
-export default function SectionHeader({titleObj,description}:Props)
+export default function SectionHeader({titleObj,description}:ISectionHeader)
 {
   return (
     <Container>

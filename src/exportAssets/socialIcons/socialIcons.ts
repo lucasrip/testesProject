@@ -15,11 +15,11 @@ export const socialIcons = {
     icon: importsIcons.email
   },
   youtube:{
-    name: 'youtube',
+    name: 'Youtube',
     icon: importsIcons.youtube
   },
   vercel:{
-    name: 'vercel',
+    name: 'Vercel',
     icon: importsIcons.vercel
   },
 };

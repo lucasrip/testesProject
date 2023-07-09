@@ -4,11 +4,10 @@ import colors from '../../styles/colors';
 export const Container = styled.main`
 
 position: relative;
-margin-top: 5rem;
-padding-bottom: 1rem;
+margin-top: 2rem;
+padding-bottom: 3rem;
 width: 100%;
-height: 100%;
-flex: 1;
+min-height: 100%;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -25,10 +24,11 @@ padding-right: 2rem;
 border-bottom: 0.5rem solid ${colors.purple.bold};
 width: auto;
 min-width:40%;
-height: auto;
+height: 100%;
 display: flex;
 justify-content: center;
 align-items: center;
+flex-wrap:wrap;
 font-family: 'Oswald', sans-serif;
 font-weight: 400;
 
@@ -46,6 +46,7 @@ font-weight: 400;
 
 > div a
 {
+  text-transform: capitalize;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -85,4 +86,13 @@ font-weight: 400;
  width: calc(100% + 1.5rem);
 }
 
+`;
+
+export const SectionsContainer = styled.div`
+position:relative;
+display: flex;
+width:100%;
+height: auto;
+flex-direction: column;
+align-items: center;
 `;

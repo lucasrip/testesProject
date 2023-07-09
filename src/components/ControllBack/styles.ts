@@ -14,6 +14,7 @@ export const Container = styled.div`
  {
   display: flex;
   align-items: center;
+  justify-content:start;
   width: 29.75rem;
   height: 5.3125rem;
   background: ${colors.purple.bold};
@@ -23,6 +24,7 @@ export const Container = styled.div`
   
   >a
   {
+    
    margin-right:2.5rem ;
     
     >img
@@ -32,7 +34,7 @@ export const Container = styled.div`
     }
   }
 
-  strong
+  p
   {
     font-size: 1.7rem;
     color: ${colors.purple.light};

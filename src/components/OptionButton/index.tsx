@@ -1,6 +1,6 @@
 import { Button, Container } from './styles';
 
-interface Props
+interface IOptionButton
 {
   option:{
    name: string;
@@ -11,7 +11,7 @@ interface Props
   }
 }
 
-export default function OptionButton({ option }:Props)
+export default function OptionButton({ option }:IOptionButton)
 {
 
   return (

@@ -23,6 +23,7 @@ export default function Header()
       description: 'link para acessar meu linkdin',
     }, 
   ];
+  
   return(
     <Container>
       <img src={Logo} loading="lazy" alt="minha logo atual" title="minha logo atual" />  

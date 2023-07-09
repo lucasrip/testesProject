@@ -1,4 +1,4 @@
-import { Container, ProjectContainer } from './styles';
+import { Container } from './styles';
 
 import Slider from 'react-slick';
 
@@ -8,27 +8,36 @@ import { Project } from '../../types/project';
 import { useState } from 'react';
 import Modal from '../Modal';
 import SectionHeader from '../SectionHeader';
+import SlidWebItem from '../SlidWebItem';
+import SlidMobileItem from '../SlidMobileItem';
 
-interface Props
+
+interface ISliderSection
 {
   titleObj: {
     title:string;
     icon: string;
   };
+  typeFormat:string;
   description: string;
   data: Project[];
 }
 
-export default function SliderSection({titleObj,data, description}:Props)
+interface IslidItem{
+    web:JSX.Element;
+    mobile:JSX.Element;
+}
+
+export default function SliderSection({titleObj,data, description,typeFormat}:ISliderSection)
 {
   const [ isOpen , setIsOpen ] = useState(false);
-  const [ project , setProject ] = useState<Project >({} as Project);
+  const [ clickedProject , setClickedProject ] = useState<Project >({} as Project);
 
-  // let slidesToShow = window.innerWidth <= 800? 2 : 3;
-  const slidesToShow = window.innerWidth <= 500? 1 : 3;
+  let slidesToShow = window.innerWidth <= 800? 2 : 3;
+  slidesToShow = window.innerWidth <= 500? 1 : slidesToShow;
   
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 200,
     slidesToShow,
@@ -37,7 +46,7 @@ export default function SliderSection({titleObj,data, description}:Props)
 
   function handleOpenModal(project:Project)
   {
-    setProject(project);
+    setClickedProject(project);
     setIsOpen(true);
   }
 
@@ -55,31 +64,39 @@ export default function SliderSection({titleObj,data, description}:Props)
        
       <Slider {...settings}>
         {
-          data.map( (project,index) =>
-            <ProjectContainer 
-              key={index} 
-              onClick={() => handleOpenModal(project) }  
-            >
-              <span>
-                <strong>
-                  { project.name}
-                </strong>
-              </span>
-              <img 
-                src={project.imgs[0].link} 
-                alt={project.imgs[0].description} 
-                title={project.imgs[0].description} 
-              />
-            </ProjectContainer>  
-          )
+          data.map( (project) =>{
+
+            const slidTypes:IslidItem ={
+              web:<SlidWebItem      
+                project={project}
+                handleOpenModal={handleOpenModal}
+                key={project.name}
+              />,
+              mobile:<SlidMobileItem
+                project={project}
+                handleOpenModal={handleOpenModal}
+                key={project.name}
+              />,
+          
+            };
+            const slidItem = slidTypes[typeFormat as keyof IslidItem];
+
+            return(
+              slidItem
+            );
+          })
+
         }
+
       </Slider>
 
       <Modal 
         controllModal={controllModal}
-        project={project}
+        project={clickedProject}
         titleObj={titleObj}
+        typeFormat={typeFormat}
       />
+      
     </Container>
   );
 }

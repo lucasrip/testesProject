@@ -28,6 +28,7 @@ export const Container = styled.div`
    {
     font-size: 2rem;
     margin-left: 1rem;
+    text-transform: capitalize;
    }
   }
   h2
@@ -35,6 +36,7 @@ export const Container = styled.div`
     font-size: 1.4rem;
     margin-top: 2.5rem;
     margin-left: 8rem;
+    
   }
  
   @media (max-width:600px)

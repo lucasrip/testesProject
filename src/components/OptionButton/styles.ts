@@ -30,6 +30,7 @@ export const Button = styled(Link)`
  border-radius: 0.3rem;
  align-items: center;
  font-family: 'Raleway', sans-serif;
+ text-transform: capitalize;
  
  &:visited
  {

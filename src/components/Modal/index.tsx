@@ -8,10 +8,12 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { stackIcons } from '../../exportAssets/stackIcons/stackIcons';
 import { socialIcons } from './../../exportAssets/socialIcons/socialIcons';
+import { useState } from 'react';
 
-interface Props
+interface IModal
 {
   project: Project ;
+  typeFormat:string;
   titleObj:{
    title: string;
    icon: string ;
@@ -22,17 +24,26 @@ interface Props
   };
 }
 
-export default function Modal({titleObj,project , controllModal }:Props)
+export default function Modal({titleObj,project , controllModal, typeFormat }:IModal)
 {
  
   if(!controllModal.isOpen) return null;
+
+  const [ isLoading , setIsLoading] = useState(false);
+
 
   const settings = {
     customPaging: function(i: number) {
 
       return (
         <a>
-          <img src={project.imgs[i].link} loading="lazy" alt={project.imgs[i].description} />
+          <img 
+            src={project.imgs[i].link} 
+            className={`${!isLoading&&'skeleton'}`}
+            loading="lazy" 
+            alt={project.imgs[i].description}
+            onLoad={()=>setIsLoading(true)}
+          />
         </a>
       );
     },
@@ -54,7 +65,7 @@ export default function Modal({titleObj,project , controllModal }:Props)
               onClick={() => controllModal.setIsOpen(false)}
               title="botao para fechar o modal"
             >
-              <img src={assets.close} loading="lazy" alt="bfechar modal" />
+              <img src={assets.close} loading="lazy" alt="button para fechar modal" />
             </button>
           </div>
           <div 
@@ -62,19 +73,31 @@ export default function Modal({titleObj,project , controllModal }:Props)
             title={`header do modal com um icone do divece para qual o projeto foi feito e ao lado tem o nome do projeto que é ${project.name}`}
           >
             <img src={titleObj.icon} loading="lazy" alt="imagem do dive para qual o projeto foi feito" />
-            <strong>
-              {project.name}
-            </strong>
+            {
+              isLoading&&
+               <h1>
+                 {project.name}
+               </h1>
+            }
           </div>
 
           <Body>
-            <Slider {...settings} className={titleObj.title.toLowerCase()} >
-              {
-                project.imgs.map((img, index) => (
-                  <img src={img.link} key={index} loading="lazy" alt={img.description} title={img.description} />
-                ))
-              }
-            </Slider>
+            <div  className={`${!isLoading&&'skeleton'}`}>
+              <Slider {...settings} className={typeFormat} >
+                {
+                  project.imgs.map((img, index) => (
+                    <img 
+                      src={img.link} 
+                      key={index} 
+                      loading="lazy" 
+                      alt={img.description} 
+                      title={img.description}
+                      onLoad={()=>setIsLoading(true)}
+                    />
+                  ))
+                }
+              </Slider>
+            </div>
             <p>
               {project.description}
             </p>
@@ -82,9 +105,9 @@ export default function Modal({titleObj,project , controllModal }:Props)
 
           <ProjectDetails>
             <div className='details'>
-              <strong>
+              <p>
                 Stack
-              </strong>
+              </p>
                
               <div>
                 {
@@ -104,9 +127,9 @@ export default function Modal({titleObj,project , controllModal }:Props)
             </div>
 
             <div className='details'>
-              <strong>
+              <p>
                 Links
-              </strong>
+              </p>
                
               <div>
                 {
