@@ -11,7 +11,7 @@ export default [
       description : 'imagem da home do projeto',
     },
     ],
-    links:[{
+    projectBuild:[{
       name: 'github',    
       description: 'repo do projeto no github',          
       link: 'https://github.com/lucasrip/myContactsFront',     
@@ -36,7 +36,7 @@ export default [
       description : 'imagem da home do projeto',
     },
     ],
-    links:[{
+    projectBuild:[{
       name: 'github',    
       description: 'repo do projeto no github',          
       link: 'https://github.com/lucasrip/myContactsFront',     
@@ -61,7 +61,7 @@ export default [
       description : 'imagem da home do projeto',
     },
     ],
-    links:[{
+    projectBuild:[{
       name: 'github',    
       description: 'repo do projeto no github',          
       link: 'https://github.com/lucasrip/pokedexNative',     

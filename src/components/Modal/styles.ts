@@ -35,7 +35,7 @@ export const ModalBox = styled.div`
  padding:2rem;
  background-color: ${colors.purple.light};
  border-radius: 5px;
- gap:1.5rem;
+ gap:2rem;
 
  .boxCloseModal
  {
@@ -78,6 +78,8 @@ export const ModalBox = styled.div`
     h1
     {
       font-family: 'Oswald', sans-serif;
+      width: 20rem;
+      height: 2rem;
       font-size: 2rem;
       font-weight: bold;
       margin-left: 1rem;

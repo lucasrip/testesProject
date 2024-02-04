@@ -73,12 +73,10 @@ export default function Modal({titleObj,project , controllModal, typeFormat }:IM
             title={`header do modal com um icone do divece para qual o projeto foi feito e ao lado tem o nome do projeto que é ${project.name}`}
           >
             <img src={titleObj.icon} loading="lazy" alt="imagem do dive para qual o projeto foi feito" />
-            {
-              isLoading&&
-               <h1>
-                 {project.name}
-               </h1>
-            }
+         
+            <h1 className={`${!isLoading&&'skeleton'}`}>
+              {isLoading&&project.name}
+            </h1>
           </div>
 
           <Body>
@@ -128,12 +126,32 @@ export default function Modal({titleObj,project , controllModal, typeFormat }:IM
 
             <div className='details'>
               <p>
-                Links
+                reference
               </p>
                
               <div>
                 {
-                  project.links.map((item , index) => {
+                  project.projectBuild.map((item , index) => {
+                    const socialItem = socialIcons[item.name as keyof typeof socialIcons];
+                     
+                    return(
+                      <a href={item.link} key={index} title={item.description} target="blank" >
+                        <img src={socialItem.icon} loading="lazy" alt={socialItem.icon} />
+                        <p>{item.name}</p>
+                      </a>
+                    );
+                  })
+                }
+              </div>
+            </div>
+            <div className='details'>
+              <p>
+                 build
+              </p>
+               
+              <div>
+                {
+                  project.projectBuild.map((item , index) => {
                     const socialItem = socialIcons[item.name as keyof typeof socialIcons];
                      
                     return(

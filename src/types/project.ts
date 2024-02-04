@@ -7,7 +7,7 @@ export interface Project
       link: string;
       description: string;
     }[];
-    links:{
+    projectBuild:{
       name: string;    
       description: string;          
       link: string;     
