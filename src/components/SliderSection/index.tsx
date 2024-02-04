@@ -35,7 +35,7 @@ export default function SliderSection({
   const [isOpen, setIsOpen] = useState(false);
   const [clickedProject, setClickedProject] = useState<Project>({} as Project);
 
-  let slidesToShow = window.innerWidth <= 800 ? 2 : 2;
+  let slidesToShow = window.innerWidth <= 800 ? 2 : 3;
   slidesToShow = window.innerWidth <= 450 ? 1 : slidesToShow;
 
   const settings = {
