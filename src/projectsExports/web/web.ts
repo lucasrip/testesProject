@@ -47,6 +47,11 @@ export default [
         description: 'video do projeto',
         link: 'https://www.youtube.com/watch?v=_frTSykkN8I',
       },
+      {
+        name: 'vercel',
+        description: 'visualizarProjeto',
+        link: 'https://pokecamp.onrender.com/',
+      },
     ],
     stack: ['react', 'styled', 'js'],
   },
