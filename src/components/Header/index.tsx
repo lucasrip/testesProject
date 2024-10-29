@@ -1,44 +1,34 @@
-import { Container, SocialMenu} from './styles';
-import { socialIcons } from '../../exportAssets/socialIcons/socialIcons';
-import Logo from '../../assets/logo/logo.png';
+import { Link } from 'react-router-dom';
+import { HeaderContainer, Tools } from './styles';
+import logo from '../../assets/config/logo.png';
+import CodeHilighterContainer from '../CodeHilightercontainer';
+import { Iheader } from '../../types/header';
 
-export default function Header()
-{
-  const {github ,youtube , linkedin} = socialIcons;
+interface Props extends Iheader {}
 
-  const socialArr = [
-    {
-      ...github,
-      url:'https://github.com/lucasrip',
-      description: 'link para acessar meu github',
-    },
-    {
-      ...youtube,
-      url:'https://www.youtube.com/channel/UC5eg3A9GDnsf51M8vZDDgmQ',
-      description: 'link para acessar meu canal do youtube com alguns demonstrativos de projetos',
-    },
-    {
-      ...linkedin,
-      url:'https://www.linkedin.com/in/lucashcc/',
-      description: 'link para acessar meu linkdin',
-    }, 
-  ];
-  
-  return(
-    <Container>
-      <img src={Logo} loading="lazy" alt="minha logo atual" title="minha logo atual" />  
-      <ul>
-        <SocialMenu>
-          {
-            socialArr.map((item, index) => (
-              <a key={index} href={item.url} target="blank">
-                <img src={item.icon} alt={item.description} loading="lazy" title={item.description} />
-                <strong>{item.name}</strong>
-              </a>
-            ))
-          }
-        </SocialMenu>
-      </ul>
-    </Container>
+export default function Header({
+  redirect,
+  projectFiles = [],
+  assets,
+  folderDowloadName,
+}: Props) {
+  return (
+    <HeaderContainer>
+      <Link to={redirect}>
+        <img
+          src={logo}
+          alt="botao para voltar para a pagina incial dos testes"
+        />
+      </Link>
+      <Tools>
+        {projectFiles.length > 0 && (
+          <CodeHilighterContainer
+            projectFiles={projectFiles}
+            assets={assets}
+            folderDowloadName={folderDowloadName}
+          />
+        )}
+      </Tools>
+    </HeaderContainer>
   );
 }

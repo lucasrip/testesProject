@@ -1,21 +1,26 @@
-import { createBrowserRouter , RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import links from './src/links/links';
+import Home from './src/pages/Home';
+import PageNotFound from './src/pages/PageNotFound';
 
-import Home from './src/pages/Home/index';
-import Projects from './src/pages/Projects';
-
-const router = createBrowserRouter([
+const routerLinks = [
   {
-    path:'/',
-    element: <Home/>,
+    path: '/',
+    element: <Home />,
   },
+  ...links.map(({ link, element }) => {
+    return {
+      path: link,
+      element: element,
+    };
+  }),
   {
-    path:'/projects',
-    element: <Projects/>
-  }
-]);
+    path: '*',
+    element: <PageNotFound />,
+  },
+];
+const router = createBrowserRouter([...routerLinks]);
 
-
-export default function Routes ()
-{
-  return <RouterProvider router={router}/>;
+export default function Routes() {
+  return <RouterProvider router={router} />;
 }
