@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { HeaderContainer, Tools } from './styles';
 import logo from '../../assets/config/logo.png';
-import CodeHilighterContainer from '../CodeHilighterContainer';
 import { Iheader } from '../../types/header';
+import CodeHilighterContainer from '../CodeHilighterContainer';
 
 interface Props extends Iheader {}
 

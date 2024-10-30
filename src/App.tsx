@@ -4,14 +4,8 @@ import { ErrorBoundary } from 'react-error-boundary';
 import ErrorHandller from './components/ErrorHandller';
 import { useState } from 'react';
 
-interface ErrorInfo {
-  componentStack: string;
-}
-interface Error {
-  cause?: unknown;
-}
 
-function logErrorToService(error: Error, info: ErrorInfo) {
+function logErrorToService(error: Error, info: React.ErrorInfo) {
   console.error('Caught an error:', error, info);
 }
 
