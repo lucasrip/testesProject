@@ -22,7 +22,7 @@ interface Props extends Ihiliter {}
 export default function CodeHilighterContainer({
   projectFiles,
   assets,
-  folderDowloadName,
+  folderDowloadName = "dowloadFolder",
 }: Props) {
   const firtContent = projectFiles?.length ? projectFiles[0] : '';
   const [contentFile, setContentFile] = useState<string>('');
