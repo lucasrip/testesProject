@@ -10,6 +10,7 @@
     "commit": "commit",
     "generate": "yarn plop --plopfile ./generators/plopfile.js"
   },
+ 
   "dependencies": {
     "@types/node": "^18.14.2",
     "@types/react-slick": "^0.23.10",
@@ -38,7 +39,7 @@
     "@vitejs/plugin-react": "^3.1.0",
     "eslint": "^8.34.0",
     "eslint-plugin-react": "^7.32.2",
-    "typescript": "^4.9.3",
+    "typescript": "latest",
     "vite": "^4.1.0"
   }
 }
