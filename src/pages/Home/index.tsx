@@ -4,7 +4,7 @@ import ComponentContainer from '../../components/ComponentContainer';
 
 export default function Home() {
   return (
-    <ComponentContainer redirect="/" paths={[]} >
+    <ComponentContainer redirect="/"  >
       <LinksContainer>
         <main>
           {links.map(({ link, name, description }, index) => {

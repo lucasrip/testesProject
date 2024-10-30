@@ -3,7 +3,7 @@ import { fileType } from './filesTypes';
 import { folderType } from './folderTpe';
 
 export default interface Ihiliter {
-  folderDowloadName: string;
+  folderDowloadName?: string;
   projectFiles?: {
     url: string;
     name: string;
