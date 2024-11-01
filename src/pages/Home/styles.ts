@@ -37,11 +37,11 @@ export const LinkItem = styled(Link)`
   width: 60%;
   height: 8rem;
   border-radius: 8px;
-  h1 {
+  strong {
     font-size: 2rem;
   }
 
-  h2 {
+  p {
     font-size: 1.125rem;
   }
 `;

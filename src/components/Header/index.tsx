@@ -12,6 +12,8 @@ export default function Header({
   assets,
   folderDowloadName,
 }: Props) {
+  const hasFiles = projectFiles.length > 0;
+
   return (
     <HeaderContainer>
       <Link to={redirect}>
@@ -21,7 +23,7 @@ export default function Header({
         />
       </Link>
       <Tools>
-        {projectFiles.length > 0 && (
+        {hasFiles && (
           <CodeHilighterContainer
             projectFiles={projectFiles}
             assets={assets}

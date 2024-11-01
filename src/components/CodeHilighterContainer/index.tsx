@@ -22,7 +22,7 @@ interface Props extends Ihiliter {}
 export default function CodeHilighterContainer({
   projectFiles,
   assets,
-  folderDowloadName = "dowloadFolder",
+  folderDowloadName = 'dowloadFolder',
 }: Props) {
   const firtContent = projectFiles?.length ? projectFiles[0] : '';
   const [contentFile, setContentFile] = useState<string>('');
@@ -66,7 +66,8 @@ export default function CodeHilighterContainer({
     type: 'text/plain',
   });
   const selectectFileUrl = URL.createObjectURL(selectedFileBlob);
-
+ const showModal = contentFile != '' && isOpen;
+ 
   return (
     <HiligterContainer>
       <div className="openFiles">
@@ -76,7 +77,7 @@ export default function CodeHilighterContainer({
         </button>
       </div>
 
-      {contentFile != '' && isOpen && (
+      {showModal && (
         <HiligterModal>
           <Content>
             <header>
