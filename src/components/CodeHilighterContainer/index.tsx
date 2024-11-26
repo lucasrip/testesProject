@@ -16,8 +16,7 @@ import Ihiliter from '../../types/hiligter';
 import handleDowload from '../../utils/ziFiles';
 import hilighterAssets from './imports';
 import importFile from '../../utils/importFile';
-// repositorio vite para import dinamico
-// https:github.com/rollup/plugins/tree/master/packages/dynamic-import-vars#limitations
+
 interface Props extends Ihiliter {}
 
 export default function CodeHilighterContainer({

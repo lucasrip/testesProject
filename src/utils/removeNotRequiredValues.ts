@@ -1,17 +1,21 @@
-const notRequiredItes = [
+const defaultNotRequiredValues = [
   /^export default `|`\s*;?$|\r/gm,
   /\/\/# sourceMappingURL=.*$/gm,
 ];
 
 export default function removeNotRequiredValues(
   content: string,
-  values: string[] = []
+  externalNotRequiredValues: string[] = []
 ) {
   let result = content;
-  const valuesForRemove = [...notRequiredItes, ...values];
+  const valuesForRemove = [
+    ...defaultNotRequiredValues,
+    ...externalNotRequiredValues,
+  ];
 
   for (const value of valuesForRemove) {
     result = result.replace(value, '');
   }
+
   return result;
 }
