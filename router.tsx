@@ -8,6 +8,7 @@ const routerLinks = [
     path: '/',
     element: <Home />,
   },
+
   ...links.map(({ link, element }) => {
     return {
       path: link,

@@ -3,7 +3,7 @@ import {
   darcula,
   materialLight,
 } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Content,
   Files,
@@ -15,6 +15,7 @@ import {
 import Ihiliter from '../../types/hiligter';
 import handleDowload from '../../utils/ziFiles';
 import hilighterAssets from './imports';
+import importFile from '../../utils/importFile';
 // repositorio vite para import dinamico
 // https:github.com/rollup/plugins/tree/master/packages/dynamic-import-vars#limitations
 interface Props extends Ihiliter {}
@@ -40,19 +41,12 @@ export default function CodeHilighterContainer({
   const maskName = (item: { name: string; type: string }) =>
     item.name + '.' + item.type;
 
-  const importFile = async (file: string) => {
-    try {
-      const conteudo = await import(/* @vite-ignore */ `${file}?raw`);
-      setContentFile(conteudo.default);
-    } catch (error) {
-      console.error('Erro ao carregar o arquivo:', error);
-      setContentFile('Erro ao carregar o arquivo');
+  useEffect(() => {
+    if (hasContent) {
+      const searchedFile = Promise.resolve(importFile(chosenFile.url));
+      searchedFile.then((response) => setContentFile(response as string));
     }
-  };
-
-  if (hasContent) {
-    importFile(chosenFile?.url);
-  }
+  }, [chosenFile]);
 
   function handleCopy() {
     setCopy(true);
@@ -66,8 +60,8 @@ export default function CodeHilighterContainer({
     type: 'text/plain',
   });
   const selectectFileUrl = URL.createObjectURL(selectedFileBlob);
- const showModal = contentFile != '' && isOpen;
- 
+  const showModal = contentFile != '' && isOpen;
+
   return (
     <HiligterContainer>
       <div className="openFiles">
@@ -154,7 +148,7 @@ export default function CodeHilighterContainer({
               </Files>
             )}
             <SyntaxHighlighter
-              language="text"
+              language={contentType}
               className="highlighterResult"
               showLineNumbers
               type={contentType}

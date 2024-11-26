@@ -24,12 +24,12 @@ export default function ReadTime() {
       projectFiles={[
         {
           name: 'index',
-          url: '../../../src/pages/ReadTime/index.tsx',
+          url: '/src/pages/ReadTime/index.tsx?raw',
           type: 'tsx',
         },
         {
           name: 'styles',
-          url: '../../../src/pages/ReadTime/styles.ts',
+          url: '/src/pages/ReadTime/styles.ts',
           type: 'ts',
         },
       ]}

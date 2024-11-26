@@ -1,5 +1,6 @@
 import JSZip from 'jszip';
 import { TdowloadAssets } from '../types/assets';
+import removeNotRequiredValues from './removeNotRequiredValues';
 
 export default async function handleDowload(
   folderName: string,
@@ -10,8 +11,10 @@ export default async function handleDowload(
   for (let i = 0; i < assetsArr.length; i++) {
     const item = assetsArr[i];
 
-    const conteudo = await import(/* @vite-ignore */ `${item.url}?raw`);
-    const blob = new Blob([conteudo.default], {
+    const response = await fetch(`${item.url}`);
+    const conteudo = await response.text();
+    const contentResult = removeNotRequiredValues(conteudo);
+    const blob = new Blob([contentResult], {
       type: 'text/plain',
     });
     zip.file(`${item.name}.${item.type}`, blob);

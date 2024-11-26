@@ -22,12 +22,12 @@ export default function Editor() {
       projectFiles={[
         {
           name: 'index',
-          url: '../../../src/pages/TextEditor/index.tsx',
+          url: '/src/pages/TextEditor/index.tsx?raw',
           type: 'tsx',
         },
         {
           name: 'styles',
-          url: '../../../src/pages/TextEditor/styles.ts',
+          url: '/src/pages/TextEditor/styles.ts',
           type: 'ts',
         },
       ]}

@@ -9,7 +9,7 @@ export const HiligterContainer = styled.div`
     background: none;
     color: #000;
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     justify-content: center;
     align-items: center;
     padding: 0.5rem;
@@ -40,7 +40,6 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
   width: 80%;
   height: 90%;
   box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;

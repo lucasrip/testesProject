@@ -8,7 +8,6 @@ export default function Home() {
       <LinksContainer>
         <main>
           {links.map(({ link, name, description }, index) => {
-            if (name === 'home') return null;
             return (
               <LinkItem to={link} key={index + name}>
                 <strong>{name}</strong>
