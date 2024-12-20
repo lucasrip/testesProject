@@ -1,20 +1,18 @@
-import removeNotRequiredValues from "./removeNotRequiredValues";
+import removeNotRequiredValues from './removeNotRequiredValues';
 
-const baseUrlCase = {
-  development: '',
-  production: 'https://raw.githubusercontent.com/lucasrip/testesProject/main',
-};
 export default async function importFile(fileUrl: string) {
-  const codeStatus = document.URL.includes('http://localhost')
+  const productionUrl =
+    'https://raw.githubusercontent.com/lucasrip/testesProject/main';
+  const localCase = document.URL.includes('http://localhost')
     ? 'development'
     : 'production';
-  const fileCase = codeStatus as keyof typeof baseUrlCase;
-  const urlFile = baseUrlCase[fileCase] + fileUrl;
+  const fileCaseResult =
+    localCase === 'production' ? productionUrl + fileUrl : fileUrl;
 
   try {
-    const response = await fetch(urlFile);
+    const response = await fetch(fileCaseResult);
     const fileContent = await response.text();
-    const result = removeNotRequiredValues(fileContent); 
+    const result = removeNotRequiredValues(fileContent);
     return result;
   } catch (error) {
     return error;

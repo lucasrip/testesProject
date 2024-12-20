@@ -1,13 +1,8 @@
-import ReadTime from '../pages/ReadTime';
-import Editor from '../pages/TextEditor';
-import Timer from '../pages/Timer';
-
-interface Ilinks {
-  name: string;
-  link: string;
-  description: string;
-  element?: JSX.Element;
-}
+import ReadTime from '../../pages/ReadTime';
+import Editor from '../../pages/TextEditor';
+import Timer from '../../pages/Timer';
+import { Ilinks } from '../../types/links';
+import InteractiveMap from '../../pages/InteractiveMap/index';
 
 const links: Ilinks[] = [
   {
@@ -27,6 +22,12 @@ const links: Ilinks[] = [
     link: '/readTime',
     description: 'tempo de leitura de um texto',
     element: <ReadTime />,
+  },
+  {
+    name: 'Interative map',
+    link: '/interativeMap',
+    description: 'Teste de mapa em svg interativo',
+    element: <InteractiveMap />,
   },
 ];
 

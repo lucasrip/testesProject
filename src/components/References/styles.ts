@@ -18,8 +18,7 @@ export const ReferencesContainer = styled.div`
     a {
       display: flex;
       align-items: center;
-      width: auto;
-      max-width: 10rem;
+      max-width: auto;
       text-decoration: underline;
       text-underline-position: under;
       line-height: 2.5;

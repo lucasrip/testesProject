@@ -1,5 +1,5 @@
 import { LinksContainer, LinkItem } from './styles';
-import links from '../../links/links';
+import links from '../../links/index';
 import ComponentContainer from '../../components/ComponentContainer';
 
 export default function Home() {
