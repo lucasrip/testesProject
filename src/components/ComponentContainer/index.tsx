@@ -5,7 +5,7 @@ import { Container } from './styles';
 import References from '../References';
 
 import { Treferences } from '../../types/references';
-import SectionsMenu from './../SectionsMenu/index';
+import SectionsMenu from '../SectionsRowMenu';
 import { sectionsMenu } from './../../types/sectionsMenu';
 
 interface Props extends Iheader, Ihiliter, sectionsMenu {
@@ -32,12 +32,10 @@ export default function ComponentContainer({
         assets={assets}
         folderDowloadName={folderDowloadName}
       />
+      <SectionsMenu sections={sections} />
       <div>
-        <div>
-          {children}
-          <References links={references} description={referencesDescriprion} />
-        </div>
-        {<SectionsMenu sections={sections} />}
+        {children}
+        <References links={references} description={referencesDescriprion} />
       </div>
     </Container>
   );
