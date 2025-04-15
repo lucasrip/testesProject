@@ -7,10 +7,11 @@ import References from '../References';
 import { Treferences } from '../../types/references';
 import SectionsMenu from '../SectionsRowMenu';
 import Tsections from '../../types/sections';
+import { ReactNode } from 'react';
 
 interface Props extends Iheader, Ihiliter {
   sections?: Tsections;
-  children: JSX.Element;
+  children:ReactNode;
   references?: Treferences;
   referencesDescriprion?: string;
 }
