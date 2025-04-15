@@ -1,0 +1,28 @@
+{
+   "timer":{
+    "name":"timer",
+    "description":"timer progressivo"
+   },
+    "editor":{
+    "name":"editor de texto",
+    "description":"teste da biblioteca para editar texto do react"
+   },
+    "readTime":{
+    "name":"tempo de leitura",
+    "description":"teste para entender como calcular o tempo de leitura de um texto"
+   },
+    "interactiveMap":{
+    "name":"mapa interativo",
+    "description":"um mapa interativo do brasil que mostra algumas informações de cada estado"
+   },
+    "translate":{
+    "name":"internacionalização de textos",
+    "description":"pratica de interernalização de textos em multilanguages"
+   },
+    "pageExemple":{
+    "name":"page exemple",
+    "description":"page exemple "
+   }
+}
+
+

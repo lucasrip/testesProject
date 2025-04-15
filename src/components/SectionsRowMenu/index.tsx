@@ -1,11 +1,13 @@
 import { SectionsMenuContainer } from './styles';
-import { sectionsMenu } from '../../types/sectionsMenu';
+import Tsections from '../../types/sections';
 import { useState } from 'react';
 
 import arrowUpIcon from '../../assets/config/arrow-up.svg';
 import arrowDownIcon from '../../assets/config/arrow-down.svg';
 
-interface Props extends sectionsMenu {}
+interface Props {
+  sections?: Tsections;
+}
 
 export default function SectionsRowMenu({ sections }: Props) {
   if (!sections) return null;

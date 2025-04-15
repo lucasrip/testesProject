@@ -1,0 +1,25 @@
+
+import ComponentContainer from '../../components/ComponentContainer';
+import { PageExempleContainer } from './styles';
+import assets from './imports.ts'
+
+import projectFiles from './componentContainerProps/projectFiles';
+import sections from './componentContainerProps/sections';
+import references from './componentContainerProps/references';
+
+export default function {{pascalCase name}}() {
+return (
+  <ComponentContainer 
+    redirect="/" 
+    projectFiles={projectFiles}
+    sections={sections}
+    references={references}
+    assets={assets}
+    folderDowloadName="{{pascalCase name}}"
+    referencesDescriprion="">
+  <PageExempleContainer id="{{pascalCase name}}">
+    <h1>{{pascalCase name}}</h1>
+  </PageExempleContainer>
+</ComponentContainer>
+);
+}

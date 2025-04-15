@@ -6,7 +6,6 @@ const links: Ilinks[] = [
   {
     name: 'pageExemple',
     link: '/pageExemple',
-    description: 'pagina de exemplo do uso do component',
     element: <PageExemple />,
   },
 

@@ -1,5 +1,5 @@
 import { SectionsMenuContainer } from './styles';
-import { sectionsMenu } from '../../types/sectionsMenu';
+import { sectionsMenu } from '../../types/sections';
 import { useState } from 'react';
 
 import arrowUpIcon from '../../assets/config/arrow-up.svg';

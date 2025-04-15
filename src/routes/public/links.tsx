@@ -1,33 +1,36 @@
+import { Ilinks } from '../../types/links';
+
 import ReadTime from '../../pages/ReadTime';
 import Editor from '../../pages/TextEditor';
 import Timer from '../../pages/Timer';
-import { Ilinks } from '../../types/links';
 import InteractiveMap from '../../pages/InteractiveMap/index';
-
+import TranslateTeste from '../../pages/Translate/index';
+import i18n from 'i18next';
 const links: Ilinks[] = [
   {
-    name: 'Timer',
+    name: 'timer',
     link: '/timer',
-    description: 'timer',
     element: <Timer />,
   },
   {
-    name: 'Editor',
+    name: 'editor',
     link: '/editor',
-    description: 'teste de biblioteca de edicao de texto',
     element: <Editor />,
   },
   {
-    name: 'Read Time',
-    link: '/readTime',
-    description: 'tempo de leitura de um texto',
+    name: 'readTime',
+    link: '/ReadTime',
     element: <ReadTime />,
   },
   {
-    name: 'Interative map',
-    link: '/interativeMap',
-    description: 'Teste de mapa em svg interativo',
+    name: 'interactiveMap',
+    link: '/InteractiveMap',
     element: <InteractiveMap />,
+  },
+  {
+    name: 'translate',
+    link: '/TranslateTeste',
+    element: <TranslateTeste />,
   },
 ];
 

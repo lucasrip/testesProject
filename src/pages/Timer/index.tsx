@@ -2,6 +2,8 @@ import { useState, useRef } from 'react';
 import ComponentContainer from '../../components/ComponentContainer';
 import { TimerContainer } from './styles';
 import timerAssets from './imports';
+import projectFiles from './componentContainerProps/projectFiles';
+
 
 export default function Timer() {
   const [time, setTime] = useState<number>(0);
@@ -28,19 +30,7 @@ export default function Timer() {
 
   return (
     <ComponentContainer
-      redirect="/"
-      projectFiles={[
-        {
-          name: 'index',
-          url: '/src/pages/Timer/index.tsx?raw',
-          type: 'tsx',
-        },
-        {
-          name: 'styles',
-          url: '/src/pages/Timer/styles.ts',
-          type: 'ts',
-        },
-      ]}
+      projectFiles={projectFiles}
       assets={timerAssets}
       folderDowloadName="Timer"
     >

@@ -2,6 +2,9 @@ import ComponentContainer from '../../components/ComponentContainer';
 import { TextEditorContainer } from './styles';
 import JoditEditor from 'jodit-react';
 import { useRef, useState } from 'react';
+import projectFiles from './componentContainerProps/projectFiles';
+import sections from './componentContainerProps/sections';
+import references from './componentContainerProps/references';
 
 export default function Editor() {
   const editor = useRef(null);
@@ -18,33 +21,9 @@ export default function Editor() {
   }
   return (
     <ComponentContainer
-      redirect="/"
-      projectFiles={[
-        {
-          name: 'index',
-          url: '/src/pages/TextEditor/index.tsx?raw',
-          type: 'tsx',
-        },
-        {
-          name: 'styles',
-          url: '/src/pages/TextEditor/styles.ts',
-          type: 'ts',
-        },
-      ]}
-      sections={[
-        { id: 'editor', name: 'editor' },
-        { id: 'references', name: 'references' },
-      ]}
-      references={[
-        {
-          name: 'youtube tutorial',
-          url: 'https://www.youtube.com/watch?v=-z2WukjOBTI',
-        },
-        {
-          name: 'jsEditor doc',
-          url: 'https://xdsoft.net/jodit/',
-        },
-      ]}
+      projectFiles={projectFiles}
+      sections={sections}
+      references={references}
       folderDowloadName="editor"
     >
       <TextEditorContainer id="editor">

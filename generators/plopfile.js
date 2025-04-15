@@ -1,26 +1,15 @@
 
-import getActions from './getActions.js';
+const actions = require('./actions.js');
+const prompts = require("./prompts.js");
 
-export default function(plop)
+module.exports = function (plop)
 {
-  plop.setGenerator('generator', {
+  plop.setGenerator('generators', {
     description: 'generetor templates',
-    
-    prompts: [
-      {
-        type: 'list',
-        name: 'directory',
-        message: 'what do you want create',
-        choices: ['component','page','hook']
-      },
-      {
-        type: 'input',
-        name: 'name',
-        message: 'What is your name ?'
-      },
-    ],
-    actions: ({directory,name}) => getActions(directory,name),
+    prompts,
+    actions,
      
   });
 
 }
+

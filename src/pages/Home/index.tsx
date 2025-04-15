@@ -1,17 +1,22 @@
 import { LinksContainer, LinkItem } from './styles';
-import links from '../../links/index';
+import links from '../../routes/index';
 import ComponentContainer from '../../components/ComponentContainer';
-
+import { useTranslation } from 'react-i18next';
 export default function Home() {
+  const { t: translate } = useTranslation();
   return (
-    <ComponentContainer redirect="/">
+    <ComponentContainer>
       <LinksContainer>
         <main>
-          {links.map(({ link, name, description }, index) => {
+          {links.map(({ link, name }, index) => {
             return (
-              <LinkItem to={link} key={index + name}>
-                <strong>{name}</strong>
-                <p>{description}</p>
+              <LinkItem
+                to={link}
+                key={index + name}
+                onClick={() => window.scrollTo({ top: 0 })}
+              >
+                <strong>{translate(`routes.${name}.name`)}</strong>
+                <p>{translate(`routes.${name}.description`)}</p>
               </LinkItem>
             );
           })}

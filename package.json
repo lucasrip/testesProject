@@ -8,7 +8,8 @@
     "test": "jest",
     "preview": "vite preview",
     "commit": "commit",
-    "generate": "yarn plop --plopfile ./generators/plopfile.js"
+    "generate": "yarn plop --plopfile ./generators/plopfile.js",
+    "i18next-resources-for-ts": "i18next-resources-for-ts toc -i ./src/i18n -o ./src/@types/resources.ts"
   },
   "dependencies": {
     "@types/node": "^18.14.2",
@@ -17,6 +18,9 @@
     "@types/styled-components": "^5.1.26",
     "commitizen": "^4.3.1",
     "date-fns": "^4.1.0",
+    "i18next": "23.0.0",
+    "i18next-browser-languagedetector": "^8.0.4",
+    "i18next-resources-for-ts": "^1.5.0",
     "jodit": "^4.2.37",
     "jodit-react": "^4.1.2",
     "jszip": "^3.10.1",
@@ -24,6 +28,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-error-boundary": "^4.1.2",
+    "react-i18next": "13.2.0",
     "react-router-dom": "6.27.0",
     "react-slick": "^0.29.0",
     "react-syntax-highlighter": "^15.5.0",
@@ -39,8 +44,10 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^14.6.1",
+    "@types/i18next": "^13.0.0",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
+    "@types/react-i18next": "^8.1.0",
     "@typescript-eslint/eslint-plugin": "^5.53.0",
     "@typescript-eslint/parser": "^5.53.0",
     "@vitejs/plugin-react": "^3.1.0",

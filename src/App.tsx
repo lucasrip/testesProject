@@ -2,7 +2,7 @@ import Routes from './../router';
 import GlobalStyle from './styles/global';
 import { ErrorBoundary } from 'react-error-boundary';
 import ErrorHandller from './components/ErrorHandller';
-import { useState } from 'react';
+import './i18n/config';
 
 function logErrorToService(error: Error, info: React.ErrorInfo) {
   console.error('Caught an error:', error, info);
@@ -22,6 +22,5 @@ function App() {
     </ErrorBoundary>
   );
 }
-
 
 export default App;

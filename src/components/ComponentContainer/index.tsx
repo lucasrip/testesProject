@@ -1,21 +1,22 @@
 import { Iheader } from '../../types/header';
-import Ihiliter from '../../types/hiligter';
+import { Ihiliter } from '../../types/hiligter';
 import Header from '../Header';
 import { Container } from './styles';
 import References from '../References';
 
 import { Treferences } from '../../types/references';
 import SectionsMenu from '../SectionsRowMenu';
-import { sectionsMenu } from './../../types/sectionsMenu';
+import Tsections from '../../types/sections';
 
-interface Props extends Iheader, Ihiliter, sectionsMenu {
+interface Props extends Iheader, Ihiliter {
+  sections?: Tsections;
   children: JSX.Element;
   references?: Treferences;
   referencesDescriprion?: string;
 }
 
 export default function ComponentContainer({
-  redirect,
+  redirect = '/',
   projectFiles,
   assets,
   children,
@@ -33,10 +34,9 @@ export default function ComponentContainer({
         folderDowloadName={folderDowloadName}
       />
       <SectionsMenu sections={sections} />
-      <div>
-        {children}
-        <References links={references} description={referencesDescriprion} />
-      </div>
+
+      {children}
+      <References links={references} description={referencesDescriprion} />
     </Container>
   );
 }

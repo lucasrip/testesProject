@@ -4,7 +4,7 @@
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": false,
-    "skipLibCheck": true,
+    "skipLibCheck": false,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "strict": true,
@@ -14,8 +14,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    // "noImplicitAny": false,
+    // "strictNullChecks": true, 
+
   },
-  "include": ["src"],
+  "include": ["src", "generators/listTemplates/generateProcessReturn.js", "react-i18next.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -12,7 +12,7 @@ import {
   Tools,
 } from './styles';
 
-import Ihiliter from '../../types/hiligter';
+import {Ihiliter} from '../../types/hiligter';
 import handleDowload from '../../utils/ziFiles';
 import hilighterAssets from './imports';
 import importFile from '../../utils/importFile';
@@ -146,6 +146,7 @@ export default function CodeHilighterContainer({
                 })}
               </Files>
             )}
+            
             <SyntaxHighlighter
               language={contentType}
               className="highlighterResult"

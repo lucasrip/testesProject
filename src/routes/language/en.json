@@ -1,0 +1,28 @@
+{
+   "timer":{
+    "name":"timer",
+    "description":"progressive timer"
+   },
+    "editor":{
+    "name":"text editor",
+    "description":"testing react text editing library"
+   },
+    "readTime":{
+    "name":"reading time",
+    "description":"test to understand how to calculate the reading time of a text"
+   },
+    "interactiveMap":{
+    "name":"interactive map",
+    "description":"an interactive map of brazil that shows some information about each state"
+   },
+    "translate":{
+    "name":"internationalization of texts",
+    "description":"practice of internalizing texts in multiple languages"
+   },
+   "pageExemple":{
+    "name":"page exemple",
+    "description":"page exemple "
+   }
+}
+
+

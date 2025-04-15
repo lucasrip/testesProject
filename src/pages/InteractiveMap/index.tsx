@@ -3,40 +3,18 @@ import { contentMap } from './contentMap';
 import { InteractiveMapContainer } from './styles';
 import { useState } from 'react';
 import { IcontentMap } from '../../types/contentMap';
+import projectFiles from './componentContainerProps/projectFiles';
+import sections from './componentContainerProps/sections';
+import references from './componentContainerProps/references';
 
 export default function InteractiveMap() {
   const [tooltipContent, setTooltipContent] = useState<IcontentMap>();
   const [tooltipIsOpen, setTooltipIsOpen] = useState(false);
   return (
     <ComponentContainer
-      redirect="/"
-      projectFiles={[
-        {
-          name: 'index',
-          url: '/src/pages/InteractiveMap/index.tsx?raw',
-          type: 'tsx',
-        },
-        {
-          name: 'styles',
-          url: '/src/pages/InteractiveMap/styles.ts',
-          type: 'ts',
-        },
-        {
-          name: 'map content',
-          url: '/src/pages/InteractiveMap/contentMap.ts',
-          type: 'ts',
-        },
-      ]}
-      sections={[
-        { id: 'map', name: 'map' },
-        { id: 'references', name: 'references' },
-      ]}
-      references={[
-        {
-          name: 'repositorio usado como referencia',
-          url: 'https://github.com/JrDevCJ/css-tutorial/tree/main',
-        },
-      ]}
+      projectFiles={projectFiles}
+      sections={sections}
+      references={references}
       folderDowloadName="interactiveMap"
     >
       <InteractiveMapContainer id="map">
