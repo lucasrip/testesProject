@@ -5,7 +5,6 @@ import { Container } from './styles';
 
 export default function ChangeLanguge() {
   const { i18n } = useTranslation();
-  console.log(i18n);
   const languageStarted = i18n.language;
   const [languageFlag, setLanguageFlag] = useState(languageStarted);
 
