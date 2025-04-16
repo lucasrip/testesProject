@@ -1,4 +1,4 @@
-import i18next from 'i18next';
+import i18next, { Resources } from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import enTranslation from './locales/en';
@@ -19,7 +19,7 @@ const i18nConfig = {
   resources,
   debug: true,
   fallbackLng: 'pt',
-  
+
   interpolation: {
     escapeValue: false,
   },
