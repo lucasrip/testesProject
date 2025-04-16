@@ -17,7 +17,7 @@ export default function Home() {
         <main>
           {links.map(({ link, name }, index) => {
             const keyName = String(name as PageKey); 
-            const nameKey = `routes.${keyName}.name` as keyof typeof pt.routes;
+            const nameKey = `routes.${keyName}.name` as keyof typeof pt.routes as string;
             const descriptionKey =
               `routes.${keyName}.description` as keyof typeof pt.routes;
 
@@ -28,10 +28,10 @@ export default function Home() {
                 onClick={() => window.scrollTo({ top: 0 })}
               >
                 <strong>
-                  {translate(nameKey)}{' '}
+                  {translate(nameKey)}
                 </strong>
                 <p>
-                  {translate(descriptionKey)}{' '}
+                  {translate(descriptionKey)}
                 </p>
               </LinkItem>
             );
