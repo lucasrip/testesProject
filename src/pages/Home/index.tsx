@@ -16,9 +16,7 @@ export default function Home() {
       <LinksContainer>
         <main>
           {links.map(({ link, name }, index) => {
-            const keyName = String(name as PageKey) ; // Garantir que name é uma chave válida de 'routes'
-
-            // Criar as chaves explicitamente, garantindo que sejam do tipo correto
+            const keyName = String(name as PageKey); 
             const nameKey = `routes.${keyName}.name` as keyof typeof pt.routes;
             const descriptionKey =
               `routes.${keyName}.description` as keyof typeof pt.routes;
@@ -30,10 +28,10 @@ export default function Home() {
                 onClick={() => window.scrollTo({ top: 0 })}
               >
                 <strong>
-                  {translate(nameKey)} 
+                  {translate(nameKey)}{' '}
                 </strong>
                 <p>
-                  {translate(descriptionKey)} 
+                  {translate(descriptionKey)}{' '}
                 </p>
               </LinkItem>
             );
