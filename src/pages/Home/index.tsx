@@ -5,8 +5,11 @@ import { useTranslation } from 'react-i18next';
 import { Resources } from 'i18next-resources-for-ts';
 import pt from '../../i18n/locales/pt';
 type PageKey = keyof Resources['pt']['routes'];
+
 export default function Home() {
   const { t: translate } = useTranslation();
+  const routes = pt.routes;
+
   return (
     <ComponentContainer>
       <LinksContainer>
@@ -20,9 +23,13 @@ export default function Home() {
                 onClick={() => window.scrollTo({ top: 0 })}
               >
                 <strong>
-                  {translate(`routes.${keyName}.name` as keyof typeof pt)}
+                  {translate(`routes.${keyName}.name` as keyof typeof routes)}
                 </strong>
-                <p>{translate(`routes.${keyName}.description` as keyof typeof pt)}</p>
+                <p>
+                  {translate(
+                    `routes.${keyName}.description` as keyof typeof routes
+                  )}
+                </p>
               </LinkItem>
             );
           })}
