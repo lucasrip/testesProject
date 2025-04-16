@@ -23,11 +23,11 @@ export default function Home() {
                 onClick={() => window.scrollTo({ top: 0 })}
               >
                 <strong>
-                  {translate(`routes.${keyName}.name` as keyof typeof routes)}
+                  {translate(`routes.${keyName}.name` as keyof typeof pt['routes'])}
                 </strong>
                 <p>
                   {translate(
-                    `routes.${keyName}.description` as keyof typeof routes
+                    `routes.${keyName}.description` as keyof typeof pt['routes']
                   )}
                 </p>
               </LinkItem>
