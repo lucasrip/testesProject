@@ -16,10 +16,11 @@ export default function Home() {
       <LinksContainer>
         <main>
           {links.map(({ link, name }, index) => {
-            const keyName = String(name as PageKey); 
-            const nameKey = `routes.${keyName}.name` as keyof typeof pt.routes as string;
+            const keyName = String(name as PageKey);
+            const nameKey =
+              `routes.${keyName}.name` as unknown as TemplateStringsArray;
             const descriptionKey =
-              `routes.${keyName}.description` as keyof typeof pt.routes;
+              `routes.${keyName}.description` as unknown as TemplateStringsArray;
 
             return (
               <LinkItem
@@ -27,12 +28,8 @@ export default function Home() {
                 key={index + name}
                 onClick={() => window.scrollTo({ top: 0 })}
               >
-                <strong>
-                  {translate(nameKey)}
-                </strong>
-                <p>
-                  {translate(descriptionKey)}
-                </p>
+                <strong>{translate(nameKey)}</strong>
+                <p>{translate(descriptionKey)}</p>
               </LinkItem>
             );
           })}
