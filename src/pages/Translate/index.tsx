@@ -8,7 +8,7 @@ import assets from './imports';
 import ChangeLanguage from '../../components/Changelanguge';
 
 export default function Translate() {
-  const { t: translate } = useTranslation<'pt'>();
+  const { t: translate } = useTranslation();
 
   return (
     <ComponentContainer
