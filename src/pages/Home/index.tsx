@@ -4,6 +4,7 @@ import ComponentContainer from '../../components/ComponentContainer';
 import { useTranslation } from 'react-i18next';
 import { Resources } from 'i18next-resources-for-ts';
 import pt from '../../i18n/locales/pt';
+
 type PageKey = keyof Resources['pt']['routes'];
 
 export default function Home() {
@@ -15,7 +16,8 @@ export default function Home() {
       <LinksContainer>
         <main>
           {links.map(({ link, name }, index) => {
-            const keyName: PageKey = name;
+            const keyName = name as PageKey as string; // Garantir que name é uma chave válida de 'routes'
+
             return (
               <LinkItem
                 to={link}
@@ -23,12 +25,12 @@ export default function Home() {
                 onClick={() => window.scrollTo({ top: 0 })}
               >
                 <strong>
-                  {translate(`routes.${keyName}.name` as keyof typeof pt['routes'])}
+                  {translate(`routes.${keyName}.name`)}{' '}
+                  {/* Sem necessidade de "as keyof" */}
                 </strong>
                 <p>
-                  {translate(
-                    `routes.${keyName}.description` as keyof typeof pt['routes']
-                  )}
+                  {translate(`routes.${keyName}.description`)}{' '}
+                  {/* Sem necessidade de "as keyof" */}
                 </p>
               </LinkItem>
             );
