@@ -9,14 +9,16 @@ export default function Home() {
       <LinksContainer>
         <main>
           {links.map(({ link, name }, index) => {
+            const nameKey =`routes.${name}.name`;
+            const descriptionKey = `routes.${name}.description`;
             return (
               <LinkItem
                 to={link}
                 key={index + name}
                 onClick={() => window.scrollTo({ top: 0 })}
               >
-                <strong>{translate(`routes.${name}.name`)}</strong>
-                <p>{translate(`routes.${name}.description`)}</p>
+                <strong>{translate(nameKey)}</strong>
+                <p>{translate(descriptionKey)}</p>
               </LinkItem>
             );
           })}
