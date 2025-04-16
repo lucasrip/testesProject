@@ -15,8 +15,8 @@ export default function Home() {
                 key={index + name}
                 onClick={() => window.scrollTo({ top: 0 })}
               >
-                <strong>{translate(`routes.${name}.name`)}</strong>
-                <p>{translate(`routes.${name}.description`)}</p>
+                <strong>{translate(`routes.${name}.name` as const)}</strong>
+                <p>{translate(`routes.${name}.description` as const)}</p>
               </LinkItem>
             );
           })}
