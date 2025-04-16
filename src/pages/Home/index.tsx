@@ -2,10 +2,8 @@ import { LinksContainer, LinkItem } from './styles';
 import links from '../../routes/index';
 import ComponentContainer from '../../components/ComponentContainer';
 import { useTranslation } from 'react-i18next';
-import type { ParseKeys } from 'i18next';
-import  Resources  from '../../@types/resources';
+import resources from './../../@types/resources';
 
-type RouteKeys = ParseKeys<typeof Resources, 'routes'>;
 export default function Home() {
   const { t: translate } = useTranslation();
   return (
@@ -13,8 +11,8 @@ export default function Home() {
       <LinksContainer>
         <main>
           {links.map(({ link, name }, index) => {
-              const nameKey: RouteKeys = `routes.${name}.name`;
-              const descriptionKey: RouteKeys = `routes.${name}.description`;
+            const nameKey = `routes.${name as keyof typeof resources}.name`;
+            const descriptionKey = `routes.${name as keyof typeof resources}.description`;
             return (
               <LinkItem
                 to={link}
