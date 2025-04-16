@@ -19,6 +19,6 @@
     // "strictNullChecks": true, 
 
   },
-  "include": ["src", "generators/listTemplates/generateProcessReturn.js", "react-i18next.d.ts"],
+  "include": ["src", "generators/listTemplates/generateProcessReturn.js", "i18next.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
