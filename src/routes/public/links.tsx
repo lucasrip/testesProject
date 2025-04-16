@@ -5,7 +5,7 @@ import Editor from '../../pages/TextEditor';
 import Timer from '../../pages/Timer';
 import InteractiveMap from '../../pages/InteractiveMap/index';
 import TranslateTeste from '../../pages/Translate/index';
-import i18n from 'i18next';
+
 const links: Ilinks[] = [
   {
     name: 'timer',
