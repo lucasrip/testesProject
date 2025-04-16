@@ -19,7 +19,8 @@ const i18nConfig = {
   resources,
   debug: true,
   fallbackLng: 'pt',
-
+  defaultNS: 'translation',
+  ns: ['translation'],
   interpolation: {
     escapeValue: false,
   },
