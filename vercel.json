@@ -1,6 +1,8 @@
 {
  "rewrites": [{
    "source": "/(.*)",
-   "destination":"/"
+   "destination":"/",
+    "buildCommand": "yarn build",
+  "installCommand": "yarn install"
  }]
 }
