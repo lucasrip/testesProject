@@ -1,10 +1,10 @@
 import Routes from './../router';
 import GlobalStyle from './styles/global';
-import { ErrorBoundary } from 'react-error-boundary';
 import ErrorHandller from './components/ErrorHandller';
 import './i18n/config';
+import { ErrorBoundary } from 'react-error-boundary';
 
-function logErrorToService(error: Error, info: React.ErrorInfo) {
+function logErrorToService(error: Error | unknown, info: React.ErrorInfo) {
   console.error('Caught an error:', error, info);
 }
 
