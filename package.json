@@ -15,6 +15,7 @@
     "i18n-types": "i18next-resources-for-ts toc -i ./src/i18n/locales -o ./src/@types/resources.ts"
   },
   "dependencies": {
+    "@types/react-i18next": "^8.1.0",
     "commitizen": "^4.3.1",
     "date-fns": "^4.1.0",
     "i18next": "25.10.4",
