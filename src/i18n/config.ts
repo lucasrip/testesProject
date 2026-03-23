@@ -20,6 +20,11 @@ const i18nConfig = {
   debug: true,
   fallbackLng: 'pt',
   defaultNS: 'translation',
+  detection: {
+    supportedLngs: ['en', 'pt'],
+    caches: ['localStorage', 'cookie'],
+    lookupFromNavigatorIndex: 0,
+  },
   ns: ['translation'],
   interpolation: {
     escapeValue: false,

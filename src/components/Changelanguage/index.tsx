@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import assets from './imports';
 import { Container } from './styles';
 
-export default function ChangeLanguge() {
+export default function ChangeLanguage() {
   const { i18n } = useTranslation();
   const languageStarted = i18n.language;
   const [languageFlag, setLanguageFlag] = useState(languageStarted);
@@ -18,14 +18,11 @@ export default function ChangeLanguge() {
     pt: brasilIcon,
     en: usaIcon,
   };
+  const imgUrl = flagsList[languageFlag as keyof typeof flagsList]?.url;
   return (
     <Container>
       <label htmlFor="language">
-        <img
-          src={flagsList[languageFlag as keyof typeof flagsList]?.url}
-          alt="language flag"
-          title="language flag"
-        />
+        <img src={imgUrl} alt="language flag" title="language flag" />
       </label>
       <select
         onChange={(e) => handleChangeLanguage(e.target.value)}

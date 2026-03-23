@@ -1,11 +1,12 @@
 import ComponentContainer from '../../components/ComponentContainer';
 import { TranslateContainer } from './styles';
 import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'next-i18next'
 import projectFiles from './componentContainerProps/projectFiles';
 import sections from './componentContainerProps/sections';
 import references from './componentContainerProps/references';
 import assets from './imports';
-import ChangeLanguage from '../../components/Changelanguge';
+import ChangeLanguage from '../../components/Changelanguage';
 
 export default function Translate() {
   const { t: translate } = useTranslation();
