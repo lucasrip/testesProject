@@ -1,23 +1,23 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowImportingTsExtensions": true,
     "allowJs": false,
-    "skipLibCheck": false,
-    "esModuleInterop": false,
+    "skipLibCheck": true, 
+    "esModuleInterop": true, 
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["react"],
-    // "noImplicitAny": false,
+    "types": ["react"]
+       // "noImplicitAny": false,
     // "strictNullChecks": true, 
-
-  },
+},
   "include": ["src", "generators/listTemplates/generateProcessReturn.js", "i18next.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
