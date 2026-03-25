@@ -3,13 +3,13 @@ import links from '../../routes/index';
 import ComponentContainer from '../../components/ComponentContainer';
 import { useTranslation } from 'react-i18next';
 import { Resources } from 'i18next-resources-for-ts';
-import pt from '../../i18n/locales/pt';
+// import pt from '../../i18n/locales/pt';
 
 type PageKey = keyof Resources['pt']['routes'];
 
 export default function Home() {
   const { t: translate } = useTranslation();
-  const routes = pt.routes;
+  // const routes = pt.routes;
 
   return (
     <ComponentContainer>

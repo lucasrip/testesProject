@@ -21,6 +21,7 @@ const i18nConfig = {
   fallbackLng: 'pt',
   defaultNS: 'translation',
   detection: {
+    order: ['localStorage', 'cookie', 'navigator', 'htmlTag'],
     supportedLngs: ['en', 'pt'],
     caches: ['localStorage', 'cookie'],
     lookupFromNavigatorIndex: 0,

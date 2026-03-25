@@ -1,5 +1,7 @@
-import translateText from '../../pages/Translate/language/pt.json';
-import routes from '../../routes/language/pt.json';
-const languages = { translateText, routes };
+import routes from '../routes/pt.json';
+import components from '../components/pt';
+import pages from '../pages/pt';
+
+const languages = { routes,components,pages };
 const pt = Object.assign({}, languages);
 export default pt;

@@ -10,7 +10,9 @@ import ChangeLanguage from '../../components/Changelanguage';
 
 export default function Translate() {
   const { t: translate } = useTranslation();
-
+  
+  const titleText = translate('pages.translateText.text');
+  
   return (
     <ComponentContainer
       projectFiles={projectFiles}
@@ -21,7 +23,7 @@ export default function Translate() {
     >
       <TranslateContainer id="TranslateTeste">
         <ChangeLanguage />
-        <h1>{translate('translateText.text')}</h1>
+        <h1>{titleText}</h1>
       </TranslateContainer>
     </ComponentContainer>
   );

@@ -1,5 +1,4 @@
-import { JSX } from "react";
-
+import { JSX } from 'react';
 export interface Ilinks {
   name: string;
   link: string;

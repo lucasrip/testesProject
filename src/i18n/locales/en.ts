@@ -1,7 +1,8 @@
-import translateText from '../../pages/Translate/language/en.json';
-import routes from '../../routes/language/en.json';
+import routes from '../routes/en.json';
+import components from '../components/en';
+import pages from '../pages/en';
 
-const languages = { translateText, routes };
+const languages = { routes,components,pages };
 const en = Object.assign({}, languages);
 
 export default en;

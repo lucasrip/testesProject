@@ -1,23 +1,20 @@
 import resources from './resources';
 import 'i18next';
-import enTranslation from '../i18n/locales/en';
-import ptTranslation from '../i18n/locales/pt';
-
+import enTranslation from '../pages/Translate/locales/en';
+import ptTranslation from '../pages/Translate/locales/pt';
 
 type Resources = {
   en: {
-    translation: typeof enTranslation,
-  },
+    translation: typeof enTranslation;
+  };
   pt: {
-    translation: typeof ptTranslation,
-  },
+    translation: typeof ptTranslation;
+  };
 };
 declare module 'i18next' {
   interface CustomTypeOptions {
-    resources:  Resources['en'];
+    resources: Resources['en'];
     returnNull: false;
     defaultNS: 'translation';
   }
 }
- 
-
