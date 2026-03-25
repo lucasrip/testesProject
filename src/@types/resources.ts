@@ -1,5 +1,5 @@
-import enTranslation from '../pages/Translate/locales/en';
-import ptTranslation from '../pages/Translate/locales/pt';
+import enTranslation from '../i18n/locales/en';
+import ptTranslation from '../i18n/locales/pt';
 const resources = {
   en: {
     translation: typeof enTranslation,
