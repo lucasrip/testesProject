@@ -18,11 +18,11 @@ const resources = {
 const i18nConfig = {
   resources,
   debug: true,
-  fallbackLng: 'pt',
+  fallbackLng: 'pt-br',
   defaultNS: 'translation',
   detection: {
-    order: ['localStorage', 'cookie', 'navigator', 'htmlTag'],
-    supportedLngs: ['en', 'pt'],
+    order: ['navigator', 'localStorage', 'cookie', 'htmlTag'],
+    supportedLngs: ['en', 'pt-br'],
     caches: ['localStorage', 'cookie'],
     lookupFromNavigatorIndex: 0,
   },

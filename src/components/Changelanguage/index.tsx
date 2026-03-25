@@ -5,7 +5,7 @@ import { Container } from './styles';
 
 export default function ChangeLanguage() {
   const { i18n } = useTranslation();
-  const languageStarted = i18n.language;
+  const languageStarted = i18n.language.toLowerCase();
   const [languageFlag, setLanguageFlag] = useState(languageStarted);
 
   const handleChangeLanguage = (value: string) => {
@@ -15,7 +15,7 @@ export default function ChangeLanguage() {
 
   const { brasilIcon, usaIcon } = assets;
   const flagsList = {
-    pt: brasilIcon,
+    'pt-br': brasilIcon,
     en: usaIcon,
   };
   const imgUrl = flagsList[languageFlag as keyof typeof flagsList]?.url;
@@ -26,10 +26,11 @@ export default function ChangeLanguage() {
       </label>
       <select
         onChange={(e) => handleChangeLanguage(e.target.value)}
+        value={languageStarted}
         id="language"
         name="language"
       >
-        <option value="pt">PT</option>
+        <option value="pt-br">PT</option>
         <option value="en">EN</option>
       </select>
     </Container>
