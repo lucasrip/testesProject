@@ -15,15 +15,15 @@ export const LinksContainer = styled.div`
   gap: 1rem;
 
   main {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(300px, 1fr));
-    grid-template-rows: repeat(4, 1fr);
+    display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     padding-top: 2rem;
-    gap: 2rem;
+    gap: 1.5rem;
     height: auto;
-    min-height: 100vh;
-    max-width: 100%;
+    min-width: 18.75rem;
+    width: 100%;
   }
   @media (max-width: 400px) {
     main {
@@ -44,7 +44,7 @@ export const LinkItem = styled(Link)`
   padding: 1rem;
   border-radius: 8px;
   strong {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   p {
