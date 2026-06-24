@@ -26,13 +26,13 @@ export default function SectionsRowMenu({ sections }: Props) {
     <SectionsMenuContainer>
       <strong>sections</strong>
 
-      <a href={'#' + sections[0].id}>
+      <strong onClick={() => window.scrollTo({ top: 0 })}>
         <img
           src={arrowUpIcon}
           alt="click para o topo da pagina"
           title="click para o topo da pagina"
         />
-      </a>
+      </strong>
       <a href={'#' + sections.at(-1)?.id}>
         <img
           src={arrowDownIcon}

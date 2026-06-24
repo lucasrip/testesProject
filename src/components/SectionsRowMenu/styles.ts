@@ -1,16 +1,20 @@
 import styled from 'styled-components';
 
 export const SectionsMenuContainer = styled.div`
+  position: sticky;
+  top: 0;
   display: flex;
   width: 100%;
+  background: #ffffffe1;
   min-height: 5rem;
   align-items: center;
   padding: 1rem;
   gap: 1rem;
   overflow-x: auto;
 
-  a {
+  p {
     color: #5c5b5b;
+
     font-size: 1rem;
   }
   .currentSection {

@@ -15,20 +15,18 @@ export const LinksContainer = styled.div`
   gap: 1rem;
 
   main {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 22rem));
     align-items: center;
-    flex-wrap: wrap;
+    justify-content: center;
     padding-top: 2rem;
     gap: 1.5rem;
     height: auto;
-    min-width: 18.75rem;
-    width: 100%;
+    width: 80%;
   }
-  @media (max-width: 400px) {
+  @media (max-width: 1000px) {
     main {
-      gap: 1rem;
-      place-items: center;
+      width: 100%;
     }
   }
 `;
@@ -39,7 +37,7 @@ export const LinkItem = styled(Link)`
   box-shadow: #f4eef5 0px 7px 29px 0px;
   flex-direction: column;
   gap: 0.5rem;
-  width: 20rem;
+  width: 100%;
   min-height: 10rem;
   padding: 1rem;
   border-radius: 8px;
@@ -49,13 +47,5 @@ export const LinkItem = styled(Link)`
 
   p {
     font-size: 1.125rem;
-  }
-
-  @media (max-width: 400px) {
-    padding: 1rem;
-    width: 90%;
-    strong {
-      font-size: 1.5rem;
-    }
   }
 `;

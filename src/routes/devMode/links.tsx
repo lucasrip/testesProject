@@ -1,4 +1,3 @@
-
 import { Ilinks } from '../../types/links';
 import PageExemple from '../../pages/PageExemple/index';
 
@@ -8,7 +7,6 @@ const links: Ilinks[] = [
     link: '/pageExemple',
     element: <PageExemple />,
   },
-
 ];
 
 export default links;

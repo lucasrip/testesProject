@@ -11,7 +11,7 @@ import { ReactNode } from 'react';
 
 interface Props extends Iheader, Ihiliter {
   sections?: Tsections;
-  children:ReactNode;
+  children: ReactNode;
   references?: Treferences;
   referencesDescriprion?: string;
 }

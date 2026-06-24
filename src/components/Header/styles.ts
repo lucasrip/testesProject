@@ -8,6 +8,7 @@ export const HeaderContainer = styled.header`
   flex-wrap: wrap;
   width: 100%;
   height: 5rem;
+  z-index: 3;
   background: #ffffff;
   box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
   img {
