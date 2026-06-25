@@ -1,6 +1,7 @@
 export default {
   gray: {
     regular: '#f7f7f7',
+    bold: '#c5c5c5b6',
   },
   white: {
     regular: '#ffff',

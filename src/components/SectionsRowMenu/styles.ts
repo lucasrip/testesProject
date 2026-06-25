@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const SectionsMenuContainer = styled.div`
   position: sticky;
-  top: 0;
+  top: 5rem;
   display: flex;
   width: 100%;
   background: #ffffffe1;
@@ -11,10 +11,12 @@ export const SectionsMenuContainer = styled.div`
   padding: 1rem;
   gap: 1rem;
   overflow-x: auto;
+  z-index: 2;
 
-  p {
+  p,
+  a {
     color: #5c5b5b;
-
+    cursor: pointer;
     font-size: 1rem;
   }
   .currentSection {

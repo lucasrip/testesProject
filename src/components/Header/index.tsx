@@ -4,6 +4,7 @@ import logo from '../../assets/config/logo.png';
 import { Iheader } from '../../types/header';
 import CodeHilighterContainer from '../CodeHilighterContainer';
 import ChangeLanguage from '../Changelanguage';
+import { useEffect, useRef } from 'react';
 
 interface Props extends Iheader {}
 
@@ -14,25 +15,55 @@ export default function Header({
   folderDowloadName,
 }: Props) {
   const hasFiles = projectFiles.length > 0;
+  const progressRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const calculateScroll = () => {
+      // Evita erros caso o componente ainda não tenha montado
+      if (!progressRef.current) return;
+
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.scrollY;
+
+      // Calcula a porcentagem percorrida na página
+      const trackLength = documentHeight - windowHeight;
+      const percentage = trackLength > 0 ? (scrollTop / trackLength) * 100 : 0;
+
+      // Altera o CSS diretamente para evitar re-renders no React
+      progressRef.current.style.width = `${percentage}%`;
+    };
+
+    // Adiciona o listener de scroll
+    window.addEventListener('scroll', calculateScroll, { passive: true });
+
+    // Limpa o evento ao desmontar o componente
+    return () => window.removeEventListener('scroll', calculateScroll);
+  }, []);
 
   return (
     <HeaderContainer>
-      <Link to={redirect}>
-        <img
-          src={logo}
-          alt="botao para voltar para a pagina incial dos testes"
-        />
-      </Link>
-      <Tools>
-        <ChangeLanguage />
-        {hasFiles && (
-          <CodeHilighterContainer
-            projectFiles={projectFiles}
-            assets={assets}
-            folderDowloadName={folderDowloadName}
+      <span className="progressBar">
+        <div className="bar" ref={progressRef}></div>
+      </span>
+      <div>
+        <Link to={redirect}>
+          <img
+            src={logo}
+            alt="botao para voltar para a pagina incial dos testes"
           />
-        )}
-      </Tools>
+        </Link>
+        <Tools>
+          <ChangeLanguage />
+          {hasFiles && (
+            <CodeHilighterContainer
+              projectFiles={projectFiles}
+              assets={assets}
+              folderDowloadName={folderDowloadName}
+            />
+          )}
+        </Tools>
+      </div>
     </HeaderContainer>
   );
 }
