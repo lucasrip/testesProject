@@ -41,6 +41,11 @@ export const LinkItem = styled(Link)`
   min-height: 10rem;
   padding: 1rem;
   border-radius: 8px;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
   strong {
     font-size: 1.5rem;
   }
