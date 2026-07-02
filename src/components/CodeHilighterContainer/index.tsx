@@ -12,7 +12,7 @@ import {
   Tools,
 } from './styles';
 
-import {Ihiliter} from '../../types/hiligter';
+import { Ihiliter } from '../../types/hiligter';
 import handleDowload from '../../utils/ziFiles';
 import hilighterAssets from './imports';
 import importFile from '../../utils/importFile';
@@ -71,7 +71,13 @@ export default function CodeHilighterContainer({
       </div>
 
       {showModal && (
-        <HiligterModal>
+        <HiligterModal
+          onClick={(event: React.MouseEvent<HTMLDivElement>) => {
+            const target = event.target as HTMLDivElement;
+            target.id === 'modalContainer' && setIsOpen(false);
+          }}
+          id="modalContainer"
+        >
           <Content>
             <header>
               <div>
@@ -146,7 +152,7 @@ export default function CodeHilighterContainer({
                 })}
               </Files>
             )}
-            
+
             <SyntaxHighlighter
               language={contentType}
               className="highlighterResult"

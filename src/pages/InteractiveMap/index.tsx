@@ -8,7 +8,10 @@ import sections from './componentContainerProps/sections';
 import references from './componentContainerProps/references';
 
 export default function InteractiveMap() {
-  const [tooltipContent, setTooltipContent] = useState<IcontentMap>();
+  const [tooltipContent, setTooltipContent] = useState<{
+    position: { pageX: number; pageY: number };
+    item: IcontentMap;
+  }>();
   const [tooltipIsOpen, setTooltipIsOpen] = useState(false);
   return (
     <ComponentContainer
@@ -20,11 +23,19 @@ export default function InteractiveMap() {
       <InteractiveMapContainer id="map">
         <h1>mapa interativo</h1>
         <div className="container">
-          <div className={`tooltip ${tooltipIsOpen && 'showTooltip'}`}>
-            <strong>{tooltipContent?.title}</strong>
+          <div
+            className={`tooltip ${tooltipIsOpen && 'showTooltip'}`}
+            style={{
+              top: tooltipContent?.position.pageY,
+              right: tooltipContent?.position.pageX,
+              bottom: tooltipContent?.position.pageY,
+              left: tooltipContent?.position.pageX,
+            }}
+          >
+            <strong>{tooltipContent?.item?.title}</strong>
             <h2>
-              <p>{tooltipContent?.id}</p>
-              <p>{tooltipContent?.class}</p>
+              <p>{tooltipContent?.item?.id}</p>
+              <p>{tooltipContent?.item?.class}</p>
             </h2>
             <span>alguma informação sobre o estado</span>
           </div>
@@ -41,9 +52,18 @@ export default function InteractiveMap() {
               return (
                 <path
                   d={item.dimension}
-                  onMouseOver={() => {
+                  onMouseOver={(
+                    event: React.MouseEvent<SVGPathElement, MouseEvent>
+                  ) => {
+                    const pageX =
+                      window.screen.width > 500
+                        ? event?.pageX + 50
+                        : window.screen.width / 5;
+                    const pageY =
+                      window.screen.width > 500 ? event?.pageY / 2 : -100;
+
                     setTooltipIsOpen(true);
-                    setTooltipContent(item);
+                    setTooltipContent({ position: { pageX, pageY }, item });
                   }}
                   onMouseLeave={() => {
                     setTooltipIsOpen(false);
@@ -52,7 +72,7 @@ export default function InteractiveMap() {
                   id={item.id}
                   className={item.class}
                   // title={item.title}
-                />
+                ></path>
               );
             })}
           </svg>

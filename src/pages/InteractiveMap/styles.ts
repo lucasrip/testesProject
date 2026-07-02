@@ -8,7 +8,6 @@ export const InteractiveMapContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* scroll-margin-top: -50px; */
   margin: 1rem 0;
 
   .container {
@@ -21,8 +20,11 @@ export const InteractiveMapContainer = styled.div`
     padding: 50px;
   }
   svg {
-    width: 80%;
-    height: auto;
+    position: relative;
+    width: 60%;
+    height: 50%;
+    min-width: 15rem;
+    min-height: 20rem;
   }
   .norte {
     fill: #63ab3f;
@@ -55,14 +57,11 @@ export const InteractiveMapContainer = styled.div`
 
   .tooltip {
     display: none;
-    position: fixed;
-    top: 7rem;
-    right: 25%;
+    position: absolute;
     flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    width: 15rem;
-    min-width: 10rem;
-    min-height: 10rem;
+    width: 13rem;
+    height: 8rem;
     border-radius: 0.5rem;
     background: #e2ebf1;
     color: black;

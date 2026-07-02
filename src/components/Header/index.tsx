@@ -19,25 +19,21 @@ export default function Header({
 
   useEffect(() => {
     const calculateScroll = () => {
-      // Evita erros caso o componente ainda não tenha montado
+     
       if (!progressRef.current) return;
 
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
       const scrollTop = window.scrollY;
 
-      // Calcula a porcentagem percorrida na página
       const trackLength = documentHeight - windowHeight;
       const percentage = trackLength > 0 ? (scrollTop / trackLength) * 100 : 0;
 
-      // Altera o CSS diretamente para evitar re-renders no React
       progressRef.current.style.width = `${percentage}%`;
     };
 
-    // Adiciona o listener de scroll
     window.addEventListener('scroll', calculateScroll, { passive: true });
 
-    // Limpa o evento ao desmontar o componente
     return () => window.removeEventListener('scroll', calculateScroll);
   }, []);
 
